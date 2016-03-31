@@ -1,6 +1,6 @@
 object Form5: TForm5
-  Left = 139
-  Top = 129
+  Left = 96
+  Top = 122
   Width = 1212
   Height = 567
   Caption = #1057#1086#1088#1077#1074#1085#1086#1074#1072#1090#1077#1083#1100#1085#1099#1081' '#1088#1077#1078#1080#1084
@@ -147,11 +147,43 @@ object Form5: TForm5
         '----------------------------------------------------------------' +
         '----------------------'
     end
+    object Label7: TLabel
+      Left = 184
+      Top = 144
+      Width = 5
+      Height = 22
+      Font.Charset = RUSSIAN_CHARSET
+      Font.Color = clBlack
+      Font.Height = -19
+      Font.Name = 'Times New Roman'
+      Font.Style = [fsBold]
+      ParentFont = False
+    end
+    object Label8: TLabel
+      Left = 248
+      Top = 144
+      Width = 56
+      Height = 26
+      Caption = '00:00'
+      Font.Charset = RUSSIAN_CHARSET
+      Font.Color = clBlack
+      Font.Height = -24
+      Font.Name = 'Times New Roman'
+      Font.Style = [fsBold]
+      ParentFont = False
+    end
     object Panel1: TPanel
       Left = 152
       Top = 40
       Width = 65
       Height = 65
+      Caption = '0'
+      Font.Charset = RUSSIAN_CHARSET
+      Font.Color = clRed
+      Font.Height = -37
+      Font.Name = 'Times New Roman'
+      Font.Style = [fsBold]
+      ParentFont = False
       TabOrder = 0
     end
     object Panel2: TPanel
@@ -159,6 +191,13 @@ object Form5: TForm5
       Top = 40
       Width = 65
       Height = 65
+      Caption = '0'
+      Font.Charset = RUSSIAN_CHARSET
+      Font.Color = clBlue
+      Font.Height = -37
+      Font.Name = 'Times New Roman'
+      Font.Style = [fsBold]
+      ParentFont = False
       TabOrder = 1
     end
     object Panel3: TPanel
@@ -184,6 +223,7 @@ object Form5: TForm5
       Height = 33
       Caption = #1041#1072#1083#1083
       TabOrder = 4
+      OnClick = Button1Click
     end
     object Button2: TButton
       Left = 112
@@ -192,6 +232,7 @@ object Form5: TForm5
       Height = 33
       Caption = #1063#1091#1081
       TabOrder = 5
+      OnClick = Button2Click
     end
     object Button3: TButton
       Left = 112
@@ -200,6 +241,7 @@ object Form5: TForm5
       Height = 33
       Caption = #1050#1072#1085#1078#1091#1085
       TabOrder = 6
+      OnClick = Button3Click
     end
     object Button4: TButton
       Left = 336
@@ -208,6 +250,7 @@ object Form5: TForm5
       Height = 33
       Caption = #1041#1072#1083#1083
       TabOrder = 7
+      OnClick = Button4Click
     end
     object Button5: TButton
       Left = 336
@@ -216,6 +259,7 @@ object Form5: TForm5
       Height = 33
       Caption = #1063#1091#1081
       TabOrder = 8
+      OnClick = Button5Click
     end
     object Button6: TButton
       Left = 336
@@ -224,6 +268,7 @@ object Form5: TForm5
       Height = 33
       Caption = #1050#1072#1085#1078#1091#1085
       TabOrder = 9
+      OnClick = Button6Click
     end
     object Panel5: TPanel
       Left = 184
@@ -234,32 +279,28 @@ object Form5: TForm5
       TabOrder = 10
     end
     object Button7: TButton
-      Left = 128
+      Left = 160
       Top = 192
-      Width = 75
-      Height = 25
+      Width = 105
+      Height = 33
       Caption = #1057#1090#1072#1088#1090
       TabOrder = 11
+      OnClick = Button7Click
     end
     object Button8: TButton
-      Left = 240
+      Left = 288
       Top = 192
-      Width = 75
-      Height = 25
-      Caption = #1055#1072#1091#1079#1072
-      TabOrder = 12
-    end
-    object Button9: TButton
-      Left = 352
-      Top = 192
-      Width = 75
-      Height = 25
+      Width = 105
+      Height = 33
       Caption = #1057#1073#1088#1086#1089
-      TabOrder = 13
+      TabOrder = 12
+      OnClick = Button8Click
     end
   end
   object Timer1: TTimer
-    Left = 856
+    Enabled = False
+    OnTimer = Timer1Timer
+    Left = 776
     Top = 160
   end
   object MainMenu1: TMainMenu
