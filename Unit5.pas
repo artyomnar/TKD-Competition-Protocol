@@ -45,6 +45,14 @@ type
     Panel5: TPanel;
     Button7: TButton;
     Button8: TButton;
+    Panel6: TPanel;
+    Panel7: TPanel;
+    Panel8: TPanel;
+    Panel9: TPanel;
+    Panel10: TPanel;
+    Panel11: TPanel;
+    Panel12: TPanel;
+    Panel13: TPanel;
     procedure N2Click(Sender: TObject);
     procedure N3Click(Sender: TObject);
     procedure N4Click(Sender: TObject);
@@ -106,13 +114,25 @@ begin
 Timer1.Enabled:=False;
 Button7.Caption:='Старт';
 Button8.Enabled:=True;
+Button1.Enabled:=false;
+Button2.Enabled:=false;
+Button3.Enabled:=false;
+Button4.Enabled:=false;
+Button5.Enabled:=false;
+Button6.Enabled:=false;
 end
 else
 begin
 Timer1.Enabled:=True;
 Button7.Caption:='Стоп';
 Button8.Enabled:=False;
-end
+Button1.Enabled:=True;
+Button2.Enabled:=True;
+Button3.Enabled:=True;
+Button4.Enabled:=True;
+Button5.Enabled:=True;
+Button6.Enabled:=True;
+end;
 end;
 
 procedure TForm5.Button8Click(Sender: TObject);
@@ -128,6 +148,10 @@ bluepenalty:=0;
 Label8.Caption:='00:00';
 panel1.caption:='0';
 panel2.caption:='0';
+panel6.caption:='0';
+panel9.caption:='0';
+panel11.caption:='0';
+panel12.caption:='0';
 Button8.Enabled:=False;
 Timer1.Enabled:=False;
 end;
@@ -169,19 +193,22 @@ begin
 inc(redfall);
 if redfall mod 3 = 0 then redscore:=redscore-1;
 panel1.caption:= IntToStr(redscore);
+panel6.Caption:= IntToStr(redfall);
 end;
 
 procedure TForm5.Button5Click(Sender: TObject);
 begin
 inc(bluefall);
 if bluefall mod 3 = 0 then bluescore:=bluescore-1;
-panel2.caption:= IntToStr(bluescore)
+panel2.caption:= IntToStr(bluescore);
+panel11.Caption:= IntToStr(bluefall);
 end;
 
 procedure TForm5.Button3Click(Sender: TObject);
 begin
 inc(redpenalty);
 panel1.caption:= IntToStr(redscore-1);
+panel9.Caption:= IntToStr(redpenalty);
 if redpenalty = 3 then showmessage('Красный спортсмен дисквалифицирован!');
 end;
 
@@ -189,6 +216,7 @@ procedure TForm5.Button6Click(Sender: TObject);
 begin
 inc(bluepenalty);
 panel2.caption:= IntToStr(bluescore-1);
+panel12.Caption:= IntToStr(bluepenalty);
 if bluepenalty = 3 then showmessage('Синий спортсмен дисквалифицирован!');
 end;
 

@@ -1,6 +1,6 @@
 object Form5: TForm5
-  Left = 96
-  Top = 122
+  Left = 153
+  Top = 111
   Width = 1212
   Height = 567
   Caption = #1057#1086#1088#1077#1074#1085#1086#1074#1072#1090#1077#1083#1100#1085#1099#1081' '#1088#1077#1078#1080#1084
@@ -222,6 +222,7 @@ object Form5: TForm5
       Width = 105
       Height = 33
       Caption = #1041#1072#1083#1083
+      Enabled = False
       TabOrder = 4
       OnClick = Button1Click
     end
@@ -231,6 +232,7 @@ object Form5: TForm5
       Width = 105
       Height = 33
       Caption = #1063#1091#1081
+      Enabled = False
       TabOrder = 5
       OnClick = Button2Click
     end
@@ -240,6 +242,7 @@ object Form5: TForm5
       Width = 105
       Height = 33
       Caption = #1050#1072#1085#1078#1091#1085
+      Enabled = False
       TabOrder = 6
       OnClick = Button3Click
     end
@@ -249,6 +252,7 @@ object Form5: TForm5
       Width = 105
       Height = 33
       Caption = #1041#1072#1083#1083
+      Enabled = False
       TabOrder = 7
       OnClick = Button4Click
     end
@@ -258,6 +262,7 @@ object Form5: TForm5
       Width = 105
       Height = 33
       Caption = #1063#1091#1081
+      Enabled = False
       TabOrder = 8
       OnClick = Button5Click
     end
@@ -267,6 +272,7 @@ object Form5: TForm5
       Width = 105
       Height = 33
       Caption = #1050#1072#1085#1078#1091#1085
+      Enabled = False
       TabOrder = 9
       OnClick = Button6Click
     end
@@ -293,8 +299,125 @@ object Form5: TForm5
       Width = 105
       Height = 33
       Caption = #1057#1073#1088#1086#1089
+      Enabled = False
       TabOrder = 12
       OnClick = Button8Click
+    end
+    object Panel6: TPanel
+      Left = 88
+      Top = 64
+      Width = 49
+      Height = 41
+      Caption = '0'
+      Font.Charset = RUSSIAN_CHARSET
+      Font.Color = clRed
+      Font.Height = -24
+      Font.Name = 'Times New Roman'
+      Font.Style = [fsBold]
+      ParentFont = False
+      TabOrder = 13
+    end
+    object Panel7: TPanel
+      Left = 88
+      Top = 40
+      Width = 49
+      Height = 25
+      Caption = #1095#1091#1081
+      Color = clRed
+      Font.Charset = RUSSIAN_CHARSET
+      Font.Color = clWhite
+      Font.Height = -15
+      Font.Name = 'Times New Roman'
+      Font.Style = [fsBold]
+      ParentFont = False
+      TabOrder = 14
+    end
+    object Panel8: TPanel
+      Left = 24
+      Top = 40
+      Width = 49
+      Height = 25
+      Caption = #1082#1072#1085#1078#1091#1085
+      Color = clRed
+      Font.Charset = RUSSIAN_CHARSET
+      Font.Color = clWhite
+      Font.Height = -13
+      Font.Name = 'Times New Roman'
+      Font.Style = [fsBold]
+      ParentFont = False
+      TabOrder = 15
+    end
+    object Panel9: TPanel
+      Left = 24
+      Top = 64
+      Width = 49
+      Height = 41
+      Caption = '0'
+      Font.Charset = RUSSIAN_CHARSET
+      Font.Color = clRed
+      Font.Height = -24
+      Font.Name = 'Times New Roman'
+      Font.Style = [fsBold]
+      ParentFont = False
+      TabOrder = 16
+    end
+    object Panel10: TPanel
+      Left = 416
+      Top = 40
+      Width = 49
+      Height = 25
+      Caption = #1095#1091#1081
+      Color = clBlue
+      Font.Charset = RUSSIAN_CHARSET
+      Font.Color = clWhite
+      Font.Height = -15
+      Font.Name = 'Times New Roman'
+      Font.Style = [fsBold]
+      ParentFont = False
+      TabOrder = 17
+    end
+    object Panel11: TPanel
+      Left = 416
+      Top = 64
+      Width = 49
+      Height = 41
+      Caption = '0'
+      Font.Charset = RUSSIAN_CHARSET
+      Font.Color = clBlue
+      Font.Height = -24
+      Font.Name = 'Times New Roman'
+      Font.Style = [fsBold]
+      ParentFont = False
+      TabOrder = 18
+    end
+    object Panel12: TPanel
+      Left = 480
+      Top = 64
+      Width = 49
+      Height = 41
+      Caption = '0'
+      Font.Charset = RUSSIAN_CHARSET
+      Font.Color = clBlue
+      Font.Height = -24
+      Font.Name = 'Times New Roman'
+      Font.Style = [fsBold]
+      ParentFont = False
+      TabOrder = 19
+    end
+    object Panel13: TPanel
+      Left = 480
+      Top = 40
+      Width = 49
+      Height = 25
+      Caption = #1082#1072#1085#1078#1091#1085
+      Color = clBlue
+      Font.Charset = RUSSIAN_CHARSET
+      Font.Color = clWhite
+      Font.Height = -13
+      Font.Name = 'Times New Roman'
+      Font.Style = [fsBold]
+      ParentFont = False
+      TabOrder = 20
     end
   end
   object Timer1: TTimer
