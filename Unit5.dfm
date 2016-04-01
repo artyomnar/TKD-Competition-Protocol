@@ -284,16 +284,16 @@ object Form5: TForm5
       Caption = #1042#1088#1077#1084#1103
       TabOrder = 10
     end
-    object Button7: TButton
+    object start: TButton
       Left = 160
       Top = 192
       Width = 105
       Height = 33
       Caption = #1057#1090#1072#1088#1090
       TabOrder = 11
-      OnClick = Button7Click
+      OnClick = startClick
     end
-    object Button8: TButton
+    object reset: TButton
       Left = 288
       Top = 192
       Width = 105
@@ -301,7 +301,7 @@ object Form5: TForm5
       Caption = #1057#1073#1088#1086#1089
       Enabled = False
       TabOrder = 12
-      OnClick = Button8Click
+      OnClick = resetClick
     end
     object Panel6: TPanel
       Left = 88

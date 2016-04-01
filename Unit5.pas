@@ -43,8 +43,8 @@ type
     Button5: TButton;
     Button6: TButton;
     Panel5: TPanel;
-    Button7: TButton;
-    Button8: TButton;
+    start: TButton;
+    reset: TButton;
     Panel6: TPanel;
     Panel7: TPanel;
     Panel8: TPanel;
@@ -57,8 +57,8 @@ type
     procedure N3Click(Sender: TObject);
     procedure N4Click(Sender: TObject);
     procedure N5Click(Sender: TObject);
-    procedure Button7Click(Sender: TObject);
-    procedure Button8Click(Sender: TObject);
+    procedure startClick(Sender: TObject);
+    procedure resetClick(Sender: TObject);
     procedure Timer1Timer(Sender: TObject);
     procedure Button1Click(Sender: TObject);
     procedure Button4Click(Sender: TObject);
@@ -106,14 +106,14 @@ begin
 form8.visible:=true;
 end;
 
-procedure TForm5.Button7Click(Sender: TObject);
+procedure TForm5.startClick(Sender: TObject);
 begin
 if Timer1.Enabled
 then
 begin
 Timer1.Enabled:=False;
-Button7.Caption:='Старт';
-Button8.Enabled:=True;
+start.Caption:='Старт';
+reset.Enabled:=True;
 Button1.Enabled:=false;
 Button2.Enabled:=false;
 Button3.Enabled:=false;
@@ -124,8 +124,8 @@ end
 else
 begin
 Timer1.Enabled:=True;
-Button7.Caption:='Стоп';
-Button8.Enabled:=False;
+start.Caption:='Стоп';
+reset.Enabled:=False;
 Button1.Enabled:=True;
 Button2.Enabled:=True;
 Button3.Enabled:=True;
@@ -135,7 +135,7 @@ Button6.Enabled:=True;
 end;
 end;
 
-procedure TForm5.Button8Click(Sender: TObject);
+procedure TForm5.resetClick(Sender: TObject);
 begin
 sec:=0;
 min:=0;
@@ -152,7 +152,8 @@ panel6.caption:='0';
 panel9.caption:='0';
 panel11.caption:='0';
 panel12.caption:='0';
-Button8.Enabled:=False;
+reset.Enabled:=False;
+start.enabled:=true;
 Timer1.Enabled:=False;
 end;
 
@@ -207,17 +208,47 @@ end;
 procedure TForm5.Button3Click(Sender: TObject);
 begin
 inc(redpenalty);
-panel1.caption:= IntToStr(redscore-1);
+dec(redscore);
+panel1.caption:= IntToStr(redscore);
 panel9.Caption:= IntToStr(redpenalty);
-if redpenalty = 3 then showmessage('Красный спортсмен дисквалифицирован!');
+if redpenalty = 3
+then
+begin
+showmessage('Красный спортсмен дисквалифицирован!');
+Timer1.Enabled:=False;
+start.Caption:='Старт';
+reset.Enabled:=True;
+start.enabled:=false;
+Button1.Enabled:=false;
+Button2.Enabled:=false;
+Button3.Enabled:=false;
+Button4.Enabled:=false;
+Button5.Enabled:=false;
+Button6.Enabled:=false;
+end;
 end;
 
 procedure TForm5.Button6Click(Sender: TObject);
 begin
 inc(bluepenalty);
-panel2.caption:= IntToStr(bluescore-1);
+dec(bluescore);
+panel2.caption:= IntToStr(bluescore);
 panel12.Caption:= IntToStr(bluepenalty);
-if bluepenalty = 3 then showmessage('Синий спортсмен дисквалифицирован!');
+if bluepenalty = 3
+then
+begin
+showmessage('Синий спортсмен дисквалифицирован!');
+Timer1.Enabled:=False;
+start.Caption:='Старт';
+reset.Enabled:=True;
+start.enabled:=false;
+Button1.Enabled:=false;
+Button2.Enabled:=false;
+Button3.Enabled:=false;
+Button4.Enabled:=false;
+Button5.Enabled:=false;
+Button6.Enabled:=false;
+end;
 end;
 
 end.
