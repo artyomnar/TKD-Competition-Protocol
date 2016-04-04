@@ -1,8 +1,8 @@
 object Form2: TForm2
-  Left = 223
-  Top = 156
+  Left = 290
+  Top = 232
   Width = 928
-  Height = 480
+  Height = 468
   Caption = #1056#1077#1075#1080#1089#1090#1088#1072#1094#1080#1103' '#1091#1095#1072#1089#1090#1085#1080#1082#1086#1074
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -16,10 +16,16 @@ object Form2: TForm2
   TextHeight = 13
   object PageControl1: TPageControl
     Left = 72
-    Top = 48
+    Top = 8
     Width = 745
-    Height = 345
+    Height = 369
     ActivePage = TabSheet4
+    Font.Charset = RUSSIAN_CHARSET
+    Font.Color = clBlack
+    Font.Height = -13
+    Font.Name = 'Times New Roman'
+    Font.Style = []
+    ParentFont = False
     TabOrder = 0
     object TabSheet1: TTabSheet
       Caption = #1057#1087#1086#1088#1090#1089#1084#1077#1085#1099
@@ -28,12 +34,20 @@ object Form2: TForm2
         Top = 24
         Width = 705
         Height = 281
+        DataSource = DataModule9.DataSource1
         TabOrder = 0
-        TitleFont.Charset = DEFAULT_CHARSET
-        TitleFont.Color = clWindowText
-        TitleFont.Height = -11
-        TitleFont.Name = 'Tahoma'
+        TitleFont.Charset = RUSSIAN_CHARSET
+        TitleFont.Color = clBlack
+        TitleFont.Height = -13
+        TitleFont.Name = 'Times New Roman'
         TitleFont.Style = []
+      end
+      object DBNavigator1: TDBNavigator
+        Left = 96
+        Top = 312
+        Width = 550
+        Height = 25
+        TabOrder = 1
       end
     end
     object TabSheet2: TTabSheet
@@ -44,12 +58,20 @@ object Form2: TForm2
         Top = 24
         Width = 705
         Height = 281
+        DataSource = DataModule9.DataSource2
         TabOrder = 0
-        TitleFont.Charset = DEFAULT_CHARSET
-        TitleFont.Color = clWindowText
-        TitleFont.Height = -11
-        TitleFont.Name = 'Tahoma'
+        TitleFont.Charset = RUSSIAN_CHARSET
+        TitleFont.Color = clBlack
+        TitleFont.Height = -13
+        TitleFont.Name = 'Times New Roman'
         TitleFont.Style = []
+      end
+      object DBNavigator2: TDBNavigator
+        Left = 96
+        Top = 312
+        Width = 550
+        Height = 25
+        TabOrder = 1
       end
     end
     object TabSheet3: TTabSheet
@@ -60,12 +82,20 @@ object Form2: TForm2
         Top = 24
         Width = 705
         Height = 281
+        DataSource = DataModule9.DataSource3
         TabOrder = 0
-        TitleFont.Charset = DEFAULT_CHARSET
-        TitleFont.Color = clWindowText
-        TitleFont.Height = -11
-        TitleFont.Name = 'Tahoma'
+        TitleFont.Charset = RUSSIAN_CHARSET
+        TitleFont.Color = clBlack
+        TitleFont.Height = -13
+        TitleFont.Name = 'Times New Roman'
         TitleFont.Style = []
+      end
+      object DBNavigator3: TDBNavigator
+        Left = 96
+        Top = 312
+        Width = 550
+        Height = 25
+        TabOrder = 1
       end
     end
     object TabSheet4: TTabSheet
@@ -76,18 +106,26 @@ object Form2: TForm2
         Top = 24
         Width = 705
         Height = 281
+        DataSource = DataModule9.DataSource4
         TabOrder = 0
-        TitleFont.Charset = DEFAULT_CHARSET
-        TitleFont.Color = clWindowText
-        TitleFont.Height = -11
-        TitleFont.Name = 'Tahoma'
+        TitleFont.Charset = RUSSIAN_CHARSET
+        TitleFont.Color = clBlack
+        TitleFont.Height = -13
+        TitleFont.Name = 'Times New Roman'
         TitleFont.Style = []
+      end
+      object DBNavigator4: TDBNavigator
+        Left = 96
+        Top = 312
+        Width = 550
+        Height = 25
+        TabOrder = 1
       end
     end
   end
   object StatusBar1: TStatusBar
     Left = 0
-    Top = 403
+    Top = 391
     Width = 912
     Height = 19
     Panels = <
