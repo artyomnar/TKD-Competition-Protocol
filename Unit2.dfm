@@ -19,7 +19,7 @@ object Form2: TForm2
     Top = 8
     Width = 745
     Height = 369
-    ActivePage = TabSheet4
+    ActivePage = TabSheet1
     Font.Charset = RUSSIAN_CHARSET
     Font.Color = clBlack
     Font.Height = -13

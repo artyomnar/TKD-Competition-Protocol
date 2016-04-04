@@ -4,20 +4,12 @@ interface
 
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
-  Dialogs, ComCtrls, Menus, StdCtrls;
+  Dialogs, ComCtrls, Menus, StdCtrls, DBCtrls, Grids, DBGrids;
 
 type
   TForm3 = class(TForm)
     GroupBox1: TGroupBox;
-    ComboBox1: TComboBox;
     Label1: TLabel;
-    Label2: TLabel;
-    Label3: TLabel;
-    ComboBox2: TComboBox;
-    GroupBox2: TGroupBox;
-    Label4: TLabel;
-    Label5: TLabel;
-    Label6: TLabel;
     StatusBar1: TStatusBar;
     MainMenu1: TMainMenu;
     N1: TMenuItem;
@@ -25,10 +17,30 @@ type
     N4: TMenuItem;
     N5: TMenuItem;
     N2: TMenuItem;
+    PageControl1: TPageControl;
+    TabSheet1: TTabSheet;
+    DBGrid1: TDBGrid;
+    DBText1: TDBText;
+    Label4: TLabel;
+    Label5: TLabel;
+    DBText2: TDBText;
+    DBText3: TDBText;
+    Label6: TLabel;
+    Label7: TLabel;
+    Label8: TLabel;
+    DBText4: TDBText;
+    DBText5: TDBText;
+    Label2: TLabel;
+    DBText6: TDBText;
+    DBText7: TDBText;
+    Label3: TLabel;
+    Label9: TLabel;
+    DBComboBox1: TDBComboBox;
     procedure N2Click(Sender: TObject);
     procedure N3Click(Sender: TObject);
     procedure N4Click(Sender: TObject);
     procedure N5Click(Sender: TObject);
+  
   private
     { Private declarations }
   public
