@@ -32,6 +32,22 @@ type
     DataSource11: TDataSource;
     Query12_team_list: TADOQuery;
     DataSource12: TDataSource;
+    Query13_find_teamates: TADOQuery;
+    Query20_count_team_dlt: TADOQuery;
+    Query19_count_team_jnrs: TADOQuery;
+    Query18_count_team_kdts: TADOQuery;
+    Query17_count_team_chldrn: TADOQuery;
+    Query16_count_team_stf: TADOQuery;
+    Query15_count_team_jdgs: TADOQuery;
+    Query14_count_team_sprts: TADOQuery;
+    DataSource13: TDataSource;
+    DataSource14: TDataSource;
+    DataSource15: TDataSource;
+    DataSource16: TDataSource;
+    DataSource17: TDataSource;
+    DataSource18: TDataSource;
+    DataSource19: TDataSource;
+    DataSource20: TDataSource;
     procedure FormCreate(Sender: TObject);
   private
     { Private declarations }

@@ -35,11 +35,32 @@ type
     DBText7: TDBText;
     Label3: TLabel;
     Label9: TLabel;
-    DBComboBox1: TDBComboBox;
+    Label10: TLabel;
+    FindTeammates: TButton;
+    DBGrid2: TDBGrid;
+    GroupBox2: TGroupBox;
+    Label11: TLabel;
+    Label12: TLabel;
+    Label13: TLabel;
+    Label14: TLabel;
+    Label15: TLabel;
+    Label16: TLabel;
+    Label17: TLabel;
+    Label18: TLabel;
+    Label19: TLabel;
+    DBText9: TDBText;
+    DBText10: TDBText;
+    DBText11: TDBText;
+    DBText12: TDBText;
+    DBText13: TDBText;
+    DBText14: TDBText;
+    Edit1: TEdit;
+    DBText8: TDBText;
     procedure N2Click(Sender: TObject);
     procedure N3Click(Sender: TObject);
     procedure N4Click(Sender: TObject);
     procedure N5Click(Sender: TObject);
+    procedure FindTeammatesClick(Sender: TObject);
   
   private
     { Private declarations }
@@ -52,7 +73,7 @@ var
 
 implementation
 
-uses Unit1, Unit6, Unit7, Unit8;
+uses Unit1, Unit6, Unit7, Unit8, Unit9;
 
 {$R *.dfm}
 
@@ -75,6 +96,84 @@ end;
 procedure TForm3.N5Click(Sender: TObject);
 begin
 form8.visible:=true;
+end;
+
+procedure TForm3.FindTeammatesClick(Sender: TObject);
+Var TeamName:string;
+begin
+DBGrid2.Visible:=true;
+TeamName:=Unit3.Form3.Edit1.Text;
+with Unit9.DataModule9.Query13_find_teamates do
+begin
+close;
+SQL.Clear;
+SQL.Add('select sportsman_name as "ФИО спортсмена" from sportsmen where sportsmen.team ='''+TeamName+'''');
+Unit9.DataModule9.Query13_find_teamates.Active:=false;
+Unit9.DataModule9.Query13_find_teamates.Active:=true;
+end;
+
+with Unit9.DataModule9.Query14_count_team_sprts do
+begin
+close;
+SQL.Clear;
+SQL.Add('select count(id) as "число спортсменов от команды" from sportsmen where team ='''+TeamName+'''');
+Unit9.DataModule9.Query14_count_team_sprts.Active:=false;
+Unit9.DataModule9.Query14_count_team_sprts.Active:=true;
+end;
+
+with Unit9.DataModule9.Query15_count_team_jdgs do
+begin
+close;
+SQL.Clear;
+SQL.Add('select count(id) as "число судей от команды" from judges where team ='''+TeamName+'''');
+Unit9.DataModule9.Query15_count_team_jdgs.Active:=false;
+Unit9.DataModule9.Query15_count_team_jdgs.Active:=true;
+end;
+
+with Unit9.DataModule9.Query16_count_team_stf do
+begin
+close;
+SQL.Clear;
+SQL.Add('select count(id) as "число спец участников от команды" from staff where team ='''+TeamName+'''');
+Unit9.DataModule9.Query16_count_team_stf.Active:=false;
+Unit9.DataModule9.Query16_count_team_stf.Active:=true;
+end;
+
+with Unit9.DataModule9.Query17_count_team_chldrn do
+begin
+close;
+SQL.Clear;
+SQL.Add('select count(id) as "число детей от команды" from sportsmen where (age>=6) and (age<=10) and team ='''+TeamName+'''');
+Unit9.DataModule9.Query17_count_team_chldrn.Active:=false;
+Unit9.DataModule9.Query17_count_team_chldrn.Active:=true;
+end;
+
+with Unit9.DataModule9.Query18_count_team_kdts do
+begin
+close;
+SQL.Clear;
+SQL.Add('select count(id) as "число кадетов от команды" from sportsmen where (age>=11) and (age<=13) and team ='''+TeamName+'''');
+Unit9.DataModule9.Query18_count_team_kdts.Active:=false;
+Unit9.DataModule9.Query18_count_team_kdts.Active:=true;
+end;
+
+with Unit9.DataModule9.Query19_count_team_jnrs do
+begin
+close;
+SQL.Clear;
+SQL.Add('select count(id) as "число юниоров от команды" from sportsmen where (age>=14) and (age<=17) and team ='''+TeamName+'''');
+Unit9.DataModule9.Query19_count_team_jnrs.Active:=false;
+Unit9.DataModule9.Query19_count_team_jnrs.Active:=true;
+end;
+
+with Unit9.DataModule9.Query20_count_team_dlt do
+begin
+close;
+SQL.Clear;
+SQL.Add('select count(id) as "число взрослых от команды" from sportsmen where (age>=18) and team ='''+TeamName+'''');
+Unit9.DataModule9.Query20_count_team_dlt.Active:=false;
+Unit9.DataModule9.Query20_count_team_dlt.Active:=true;
+end;
 end;
 
 end.

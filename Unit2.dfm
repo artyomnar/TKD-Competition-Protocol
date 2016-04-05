@@ -1,6 +1,6 @@
 object Form2: TForm2
-  Left = 290
-  Top = 232
+  Left = 153
+  Top = 114
   Width = 928
   Height = 468
   Caption = #1056#1077#1075#1080#1089#1090#1088#1072#1094#1080#1103' '#1091#1095#1072#1089#1090#1085#1080#1082#1086#1074
@@ -45,8 +45,9 @@ object Form2: TForm2
       object DBNavigator1: TDBNavigator
         Left = 96
         Top = 312
-        Width = 550
+        Width = 540
         Height = 25
+        DataSource = DataModule9.DataSource1
         TabOrder = 1
       end
     end
@@ -71,6 +72,7 @@ object Form2: TForm2
         Top = 312
         Width = 550
         Height = 25
+        DataSource = DataModule9.DataSource2
         TabOrder = 1
       end
     end
@@ -95,6 +97,7 @@ object Form2: TForm2
         Top = 312
         Width = 550
         Height = 25
+        DataSource = DataModule9.DataSource3
         TabOrder = 1
       end
     end
@@ -119,6 +122,7 @@ object Form2: TForm2
         Top = 312
         Width = 550
         Height = 25
+        DataSource = DataModule9.DataSource4
         TabOrder = 1
       end
     end
@@ -151,7 +155,7 @@ object Form2: TForm2
       end
     end
     object N2: TMenuItem
-      Caption = #1053#1072#1079#1072#1076
+      Caption = #1042' '#1052#1077#1085#1102
       OnClick = N2Click
     end
   end
