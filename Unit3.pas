@@ -37,7 +37,6 @@ type
     Label9: TLabel;
     Label10: TLabel;
     FindTeammates: TButton;
-    DBGrid2: TDBGrid;
     GroupBox2: TGroupBox;
     Label11: TLabel;
     Label12: TLabel;
@@ -56,6 +55,13 @@ type
     DBText14: TDBText;
     Edit1: TEdit;
     DBText8: TDBText;
+    PageControl2: TPageControl;
+    TabSheet2: TTabSheet;
+    TabSheet3: TTabSheet;
+    TabSheet4: TTabSheet;
+    DBGrid2: TDBGrid;
+    DBGrid3: TDBGrid;
+    DBGrid4: TDBGrid;
     procedure N2Click(Sender: TObject);
     procedure N3Click(Sender: TObject);
     procedure N4Click(Sender: TObject);
@@ -101,15 +107,34 @@ end;
 procedure TForm3.FindTeammatesClick(Sender: TObject);
 Var TeamName:string;
 begin
-DBGrid2.Visible:=true;
+PageControl2.Visible:=true;
 TeamName:=Unit3.Form3.Edit1.Text;
+
 with Unit9.DataModule9.Query13_find_teamates do
 begin
 close;
 SQL.Clear;
-SQL.Add('select sportsman_name as "ФИО спортсмена" from sportsmen where sportsmen.team ='''+TeamName+'''');
+SQL.Add('select sportsman_name as "ФИО спортсмена", genre as "Пол", age as "Возраст" from sportsmen where sportsmen.team ='''+TeamName+'''');
 Unit9.DataModule9.Query13_find_teamates.Active:=false;
 Unit9.DataModule9.Query13_find_teamates.Active:=true;
+end;
+
+with Unit9.DataModule9.Query21_jdgs_tmmts do
+begin
+close;
+SQL.Clear;
+SQL.Add('select judge_name as "ФИО судьи", belt_degree as "Степень пояса" from judges where judges.team ='''+TeamName+'''');
+Unit9.DataModule9.Query21_jdgs_tmmts.Active:=false;
+Unit9.DataModule9.Query21_jdgs_tmmts.Active:=true;
+end;
+
+with Unit9.DataModule9.Query22_stff_tmmts do
+begin
+close;
+SQL.Clear;
+SQL.Add('select staff_name as "ФИО спец. участника", status as "Статус" from staff where staff.team ='''+TeamName+'''');
+Unit9.DataModule9.Query22_stff_tmmts.Active:=false;
+Unit9.DataModule9.Query22_stff_tmmts.Active:=true;
 end;
 
 with Unit9.DataModule9.Query14_count_team_sprts do

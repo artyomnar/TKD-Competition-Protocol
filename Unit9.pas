@@ -48,6 +48,10 @@ type
     DataSource18: TDataSource;
     DataSource19: TDataSource;
     DataSource20: TDataSource;
+    Query21_jdgs_tmmts: TADOQuery;
+    DataSource21: TDataSource;
+    Query22_stff_tmmts: TADOQuery;
+    DataSource22: TDataSource;
     procedure FormCreate(Sender: TObject);
   private
     { Private declarations }
@@ -77,4 +81,5 @@ Query11_count_adult.Active:=True;
 Query12_team_list.Active:=True;
 
 end;
+
 end.

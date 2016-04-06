@@ -3,7 +3,7 @@ object DataModule9: TDataModule9
   Left = 6
   Top = 108
   Height = 481
-  Width = 1130
+  Width = 1358
   object ADOConnection1: TADOConnection
     Connected = True
     ConnectionString = 
@@ -211,7 +211,7 @@ object DataModule9: TDataModule9
     CursorType = ctStatic
     Parameters = <>
     SQL.Strings = (
-      'select team_name as "'#1085#1072#1074#1072#1085#1080#1077' '#1082#1086#1084#1072#1085#1076#1099'"'
+      'select team_name as "'#1053#1072#1074#1072#1085#1080#1077' '#1082#1086#1084#1072#1085#1076#1099'"'
       'from team'
       '')
     Left = 936
@@ -233,49 +233,49 @@ object DataModule9: TDataModule9
     Connection = ADOConnection1
     CursorType = ctStatic
     Parameters = <>
-    Left = 1024
+    Left = 1256
     Top = 240
   end
   object Query19_count_team_jnrs: TADOQuery
     Connection = ADOConnection1
     CursorType = ctStatic
     Parameters = <>
-    Left = 896
+    Left = 1128
     Top = 240
   end
   object Query18_count_team_kdts: TADOQuery
     Connection = ADOConnection1
     CursorType = ctStatic
     Parameters = <>
-    Left = 760
+    Left = 992
     Top = 240
   end
   object Query17_count_team_chldrn: TADOQuery
     Connection = ADOConnection1
     CursorType = ctStatic
     Parameters = <>
-    Left = 624
+    Left = 856
     Top = 240
   end
   object Query16_count_team_stf: TADOQuery
     Connection = ADOConnection1
     CursorType = ctStatic
     Parameters = <>
-    Left = 488
+    Left = 720
     Top = 240
   end
   object Query15_count_team_jdgs: TADOQuery
     Connection = ADOConnection1
     CursorType = ctStatic
     Parameters = <>
-    Left = 360
+    Left = 592
     Top = 240
   end
   object Query14_count_team_sprts: TADOQuery
     Connection = ADOConnection1
     CursorType = ctStatic
     Parameters = <>
-    Left = 224
+    Left = 456
     Top = 240
   end
   object DataSource13: TDataSource
@@ -285,37 +285,61 @@ object DataModule9: TDataModule9
   end
   object DataSource14: TDataSource
     DataSet = Query14_count_team_sprts
-    Left = 224
+    Left = 456
     Top = 288
   end
   object DataSource15: TDataSource
     DataSet = Query15_count_team_jdgs
-    Left = 360
+    Left = 592
     Top = 288
   end
   object DataSource16: TDataSource
     DataSet = Query16_count_team_stf
-    Left = 488
+    Left = 720
     Top = 288
   end
   object DataSource17: TDataSource
     DataSet = Query17_count_team_chldrn
-    Left = 624
+    Left = 856
     Top = 288
   end
   object DataSource18: TDataSource
     DataSet = Query18_count_team_kdts
-    Left = 760
+    Left = 992
     Top = 288
   end
   object DataSource19: TDataSource
     DataSet = Query19_count_team_jnrs
-    Left = 896
+    Left = 1128
     Top = 288
   end
   object DataSource20: TDataSource
     DataSet = Query20_count_team_dlt
-    Left = 1024
+    Left = 1256
+    Top = 288
+  end
+  object Query21_jdgs_tmmts: TADOQuery
+    Connection = ADOConnection1
+    CursorType = ctStatic
+    Parameters = <>
+    Left = 224
+    Top = 240
+  end
+  object DataSource21: TDataSource
+    DataSet = Query21_jdgs_tmmts
+    Left = 224
+    Top = 288
+  end
+  object Query22_stff_tmmts: TADOQuery
+    Connection = ADOConnection1
+    CursorType = ctStatic
+    Parameters = <>
+    Left = 336
+    Top = 240
+  end
+  object DataSource22: TDataSource
+    DataSet = Query22_stff_tmmts
+    Left = 336
     Top = 288
   end
 end

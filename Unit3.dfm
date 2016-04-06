@@ -1,8 +1,8 @@
 object Form3: TForm3
-  Left = 259
-  Top = 124
-  Width = 694
-  Height = 616
+  Left = 311
+  Top = 57
+  Width = 690
+  Height = 636
   Caption = #1055#1086#1083#1091#1095#1077#1085#1080#1077' '#1080#1085#1092#1086#1088#1084#1072#1094#1080#1080' '#1086#1073' '#1091#1095#1072#1089#1090#1085#1080#1082#1072#1093
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -18,7 +18,7 @@ object Form3: TForm3
     Left = 16
     Top = 8
     Width = 641
-    Height = 105
+    Height = 97
     Caption = #1054#1073#1097#1077#1077' '#1082#1086#1083#1080#1095#1077#1089#1090#1074#1086':  '
     Font.Charset = RUSSIAN_CHARSET
     Font.Color = clBlack
@@ -142,8 +142,8 @@ object Form3: TForm3
   end
   object StatusBar1: TStatusBar
     Left = 0
-    Top = 539
-    Width = 678
+    Top = 559
+    Width = 674
     Height = 19
     Panels = <
       item
@@ -153,9 +153,9 @@ object Form3: TForm3
   end
   object PageControl1: TPageControl
     Left = 16
-    Top = 120
+    Top = 104
     Width = 641
-    Height = 409
+    Height = 449
     ActivePage = TabSheet1
     Font.Charset = RUSSIAN_CHARSET
     Font.Color = clBlack
@@ -165,7 +165,7 @@ object Form3: TForm3
     ParentFont = False
     TabOrder = 2
     object TabSheet1: TTabSheet
-      Caption = #1059#1095#1072#1089#1090#1085#1080#1082#1080' '#1087#1086' '#1082#1086#1084#1072#1085#1076#1072#1084':'
+      Caption = #1059#1095#1072#1089#1090#1085#1080#1082#1080' '#1087#1086' '#1082#1086#1084#1072#1085#1076#1072#1084
       object Label9: TLabel
         Left = 16
         Top = 168
@@ -174,18 +174,19 @@ object Form3: TForm3
         Caption = #1042#1099#1073#1088#1072#1090#1100' '#1082#1086#1084#1072#1085#1076#1091
       end
       object Label10: TLabel
-        Left = 24
+        Left = 16
         Top = 8
         Width = 177
         Height = 15
         Caption = #1047#1072#1088#1077#1075#1080#1089#1090#1088#1080#1088#1086#1074#1072#1085#1085#1099#1077' '#1082#1086#1084#1072#1085#1076#1099':'
       end
       object DBGrid1: TDBGrid
-        Left = 16
-        Top = 32
-        Width = 369
-        Height = 121
+        Left = 0
+        Top = 24
+        Width = 385
+        Height = 129
         DataSource = DataModule9.DataSource12
+        ReadOnly = True
         TabOrder = 0
         TitleFont.Charset = RUSSIAN_CHARSET
         TitleFont.Color = clBlack
@@ -202,27 +203,13 @@ object Form3: TForm3
         TabOrder = 1
         OnClick = FindTeammatesClick
       end
-      object DBGrid2: TDBGrid
-        Left = 16
-        Top = 192
-        Width = 609
-        Height = 185
-        DataSource = DataModule9.DataSource13
-        TabOrder = 2
-        TitleFont.Charset = RUSSIAN_CHARSET
-        TitleFont.Color = clBlack
-        TitleFont.Height = -13
-        TitleFont.Name = 'Times New Roman'
-        TitleFont.Style = [fsBold]
-        Visible = False
-      end
       object GroupBox2: TGroupBox
         Left = 392
         Top = 8
         Width = 241
         Height = 177
         Caption = #1054#1090' '#1074#1099#1073#1088#1072#1085#1085#1086#1081' '#1082#1086#1084#1072#1085#1076#1099': '
-        TabOrder = 3
+        TabOrder = 2
         object Label11: TLabel
           Left = 16
           Top = 24
@@ -348,7 +335,69 @@ object Form3: TForm3
         Top = 160
         Width = 161
         Height = 23
+        TabOrder = 3
+      end
+      object PageControl2: TPageControl
+        Left = 0
+        Top = 184
+        Width = 633
+        Height = 241
+        ActivePage = TabSheet4
         TabOrder = 4
+        Visible = False
+        object TabSheet2: TTabSheet
+          Caption = #1057#1087#1086#1088#1090#1089#1084#1077#1085#1099
+          object DBGrid2: TDBGrid
+            Left = 0
+            Top = 0
+            Width = 625
+            Height = 209
+            DataSource = DataModule9.DataSource13
+            ReadOnly = True
+            TabOrder = 0
+            TitleFont.Charset = RUSSIAN_CHARSET
+            TitleFont.Color = clBlack
+            TitleFont.Height = -13
+            TitleFont.Name = 'Times New Roman'
+            TitleFont.Style = [fsBold]
+          end
+        end
+        object TabSheet3: TTabSheet
+          Caption = #1057#1091#1076#1100#1080
+          ImageIndex = 1
+          object DBGrid3: TDBGrid
+            Left = 0
+            Top = 0
+            Width = 625
+            Height = 209
+            DataSource = DataModule9.DataSource21
+            ReadOnly = True
+            TabOrder = 0
+            TitleFont.Charset = RUSSIAN_CHARSET
+            TitleFont.Color = clBlack
+            TitleFont.Height = -13
+            TitleFont.Name = 'Times New Roman'
+            TitleFont.Style = [fsBold]
+          end
+        end
+        object TabSheet4: TTabSheet
+          Caption = #1057#1087#1077#1094'. '#1091#1095#1072#1089#1090#1085#1080#1082#1080
+          ImageIndex = 2
+          object DBGrid4: TDBGrid
+            Left = 0
+            Top = 0
+            Width = 625
+            Height = 209
+            DataSource = DataModule9.DataSource22
+            ReadOnly = True
+            TabOrder = 0
+            TitleFont.Charset = RUSSIAN_CHARSET
+            TitleFont.Color = clBlack
+            TitleFont.Height = -13
+            TitleFont.Name = 'Times New Roman'
+            TitleFont.Style = [fsBold]
+          end
+        end
       end
     end
   end
