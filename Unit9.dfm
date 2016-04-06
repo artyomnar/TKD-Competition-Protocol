@@ -1,8 +1,8 @@
 object DataModule9: TDataModule9
   OldCreateOrder = False
-  Left = 6
-  Top = 108
-  Height = 481
+  Left = 19
+  Top = 47
+  Height = 566
   Width = 1358
   object ADOConnection1: TADOConnection
     Connected = True
@@ -341,5 +341,17 @@ object DataModule9: TDataModule9
     DataSet = Query22_stff_tmmts
     Left = 336
     Top = 288
+  end
+  object Query23_sparring_pattern: TADOQuery
+    Connection = ADOConnection1
+    CursorType = ctStatic
+    Parameters = <>
+    Left = 96
+    Top = 344
+  end
+  object DataSource23: TDataSource
+    DataSet = Query23_sparring_pattern
+    Left = 96
+    Top = 392
   end
 end

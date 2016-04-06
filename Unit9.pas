@@ -52,6 +52,8 @@ type
     DataSource21: TDataSource;
     Query22_stff_tmmts: TADOQuery;
     DataSource22: TDataSource;
+    Query23_sparring_pattern: TADOQuery;
+    DataSource23: TDataSource;
     procedure FormCreate(Sender: TObject);
   private
     { Private declarations }
