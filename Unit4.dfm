@@ -1,6 +1,6 @@
 object Form4: TForm4
-  Left = 322
-  Top = 136
+  Left = 377
+  Top = 78
   Width = 666
   Height = 661
   Caption = #1046#1077#1088#1077#1073#1100#1077#1074#1082#1072
@@ -94,9 +94,9 @@ object Form4: TForm4
         object Label8: TLabel
           Left = 16
           Top = 88
-          Width = 44
+          Width = 48
           Height = 15
-          Caption = #1042#1086#1079#1088#1072#1089#1090
+          Caption = #1042#1086#1079#1088#1072#1089#1090':'
         end
         object Label9: TLabel
           Left = 368
@@ -116,6 +116,20 @@ object Form4: TForm4
             #1091#1090#1099' '#1082#1072#1090#1077#1075#1086#1088#1080#1080'! '
           WordWrap = True
         end
+        object Label4: TLabel
+          Left = 72
+          Top = 88
+          Width = 16
+          Height = 15
+          Caption = #1054#1090
+        end
+        object Label6: TLabel
+          Left = 176
+          Top = 88
+          Width = 15
+          Height = 15
+          Caption = #1044#1086
+        end
         object GenreList: TComboBox
           Left = 72
           Top = 56
@@ -128,22 +142,28 @@ object Form4: TForm4
             #1084#1091#1078
             #1078#1077#1085)
         end
-        object AgeList: TComboBox
-          Left = 72
+        object AgeListDown: TComboBox
+          Left = 96
           Top = 80
-          Width = 145
+          Width = 65
           Height = 23
           Style = csDropDownList
           ItemHeight = 15
           TabOrder = 1
           Items.Strings = (
-            '6-7'
-            '8-9'
-            '10-11'
-            '12-13'
-            '14-15'
-            '16-17'
-            '18+')
+            '6'
+            '7'
+            '8'
+            '9'
+            '10'
+            '11'
+            '12'
+            '13'
+            '14'
+            '15'
+            '16'
+            '17'
+            '18')
         end
         object WeightList: TComboBox
           Left = 408
@@ -174,6 +194,27 @@ object Form4: TForm4
           Caption = #1053#1072#1081#1090#1080' '#1082#1072#1090#1077#1075#1086#1088#1080#1102
           TabOrder = 3
           OnClick = FindMassogiCategoryClick
+        end
+        object AgeListUp: TComboBox
+          Left = 200
+          Top = 80
+          Width = 65
+          Height = 23
+          Style = csDropDownList
+          ItemHeight = 15
+          TabOrder = 4
+          Items.Strings = (
+            '7'
+            '8'
+            '9'
+            '10'
+            '11'
+            '12'
+            '13'
+            '14'
+            '15'
+            '16'
+            '17')
         end
       end
     end
