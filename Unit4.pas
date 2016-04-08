@@ -88,27 +88,28 @@ form8.visible:=true;
 end;
 
 procedure TForm4.FindMassogiCategoryClick(Sender: TObject);
-Var SGenre,SAgeUp, SAgeDown,Sweight:string;
+Var SGenre,SAgeUp,SAgeDown,Sweight:string;
 begin
 SGenre:=Unit4.Form4.GenreList.text;
 SWeight:=Unit4.Form4.WeightList.text;
 SAgeDown:=Unit4.Form4.AgeListDown.text;
 SAgeUp:=Unit4.Form4.AgeListUp.text;
 
-if (Unit4.Form4.WeightList.text = '85+') and (Unit4.Form4.AgeListDown.text <> '18') then
+if Unit4.Form4.AgeListDown.text = '18' then
+begin
+if Unit4.Form4.WeightList.text = '85+' then
 begin
 SWeight:='86';
 with Unit9.DataModule9.Query23_sparring_pattern do
 begin
 close;
 SQL.Clear;
-SQL.Add('select id as "№", sportsman_name as "ФИО спортсмена", genre as "Пол", age as "Возраст", weight as "Вес", team as "Команда" from sportsmen where genre ='''+SGenre+''' and weight >= '''+SWeight+''' and age >= '''+SAgeDown+''' and age <= '''+SAgeUp+'''');
+SQL.Add('select id as "№", sportsman_name as "ФИО спортсмена", genre as "Пол", age as "Возраст", weight as "Вес", team as "Команда" from sportsmen where genre ='''+SGenre+''' and age >= '''+SAgeDown+''' and weight >= '''+SWeight+'''');
 Unit9.DataModule9.Query23_sparring_pattern.Active:=false;
 Unit9.DataModule9.Query23_sparring_pattern.Active:=true;
 end;
-end;
-
-if Unit4.Form4.AgeListDown.text = '18' then
+end
+else
 begin
 with Unit9.DataModule9.Query23_sparring_pattern do
 begin
@@ -119,15 +120,18 @@ Unit9.DataModule9.Query23_sparring_pattern.Active:=false;
 Unit9.DataModule9.Query23_sparring_pattern.Active:=true;
 end;
 end;
+end;
 
-if  (Unit4.Form4.AgeListDown.text = '18') and (Unit4.Form4.WeightList.text = '85+') then
+if  Unit4.Form4.AgeListDown.text <> '18' then
+begin
+if Unit4.Form4.WeightList.text = '85+' then
 begin
 SWeight:='86';
 with Unit9.DataModule9.Query23_sparring_pattern do
 begin
 close;
 SQL.Clear;
-SQL.Add('select id as "№", sportsman_name as "ФИО спортсмена", genre as "Пол", age as "Возраст", weight as "Вес", team as "Команда" from sportsmen where genre ='''+SGenre+''' and weight >= '''+SWeight+''' and age >= '''+SAgeDown+'''');
+SQL.Add('select id as "№", sportsman_name as "ФИО спортсмена", genre as "Пол", age as "Возраст", weight as "Вес", team as "Команда" from sportsmen where genre ='''+SGenre+''' and age >= '''+SAgeDown+''' and age <= '''+SAgeUp+''' and weight >= '''+SWeight+'''');
 Unit9.DataModule9.Query23_sparring_pattern.Active:=false;
 Unit9.DataModule9.Query23_sparring_pattern.Active:=true;
 end;
@@ -141,6 +145,7 @@ SQL.Clear;
 SQL.Add('select id as "№", sportsman_name as "ФИО спортсмена", genre as "Пол", age as "Возраст", weight as "Вес", team as "Команда" from sportsmen where genre ='''+SGenre+''' and age >= '''+SAgeDown+''' and age <= '''+SAgeUp+''' and weight = '''+SWeight+'''');
 Unit9.DataModule9.Query23_sparring_pattern.Active:=false;
 Unit9.DataModule9.Query23_sparring_pattern.Active:=true;
+end;
 end;
 end;
 end;

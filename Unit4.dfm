@@ -1,6 +1,6 @@
 object Form4: TForm4
-  Left = 356
-  Top = 41
+  Left = 380
+  Top = 44
   Width = 666
   Height = 661
   Caption = #1046#1077#1088#1077#1073#1100#1077#1074#1082#1072

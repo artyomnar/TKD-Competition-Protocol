@@ -1,7 +1,7 @@
 object DataModule9: TDataModule9
   OldCreateOrder = False
-  Left = 19
-  Top = 47
+  Left = 8
+  Top = 50
   Height = 566
   Width = 1358
   object ADOConnection1: TADOConnection
