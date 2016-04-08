@@ -1,6 +1,6 @@
 object Form4: TForm4
-  Left = 377
-  Top = 78
+  Left = 356
+  Top = 41
   Width = 666
   Height = 661
   Caption = #1046#1077#1088#1077#1073#1100#1077#1074#1082#1072
@@ -266,6 +266,20 @@ object Form4: TForm4
             #1091#1090#1099' '#1082#1072#1090#1077#1075#1086#1088#1080#1080'! '
           WordWrap = True
         end
+        object Label12: TLabel
+          Left = 72
+          Top = 88
+          Width = 16
+          Height = 15
+          Caption = #1054#1090
+        end
+        object Label13: TLabel
+          Left = 176
+          Top = 88
+          Width = 15
+          Height = 15
+          Caption = #1044#1086
+        end
         object BeltList: TComboBox
           Left = 408
           Top = 56
@@ -282,23 +296,6 @@ object Form4: TForm4
             '3 '#1076#1072#1085
             '')
         end
-        object AgeListPattern: TComboBox
-          Left = 72
-          Top = 80
-          Width = 145
-          Height = 23
-          Style = csDropDownList
-          ItemHeight = 15
-          TabOrder = 1
-          Items.Strings = (
-            '6-7'
-            '8-9'
-            '10-11'
-            '12-13'
-            '14-15'
-            '16-17'
-            '18+')
-        end
         object GenreListPattern: TComboBox
           Left = 72
           Top = 56
@@ -306,10 +303,55 @@ object Form4: TForm4
           Height = 23
           Style = csDropDownList
           ItemHeight = 15
-          TabOrder = 2
+          TabOrder = 1
           Items.Strings = (
             #1084#1091#1078
             #1078#1077#1085)
+        end
+        object AgeListDownP: TComboBox
+          Left = 96
+          Top = 80
+          Width = 65
+          Height = 23
+          Style = csDropDownList
+          ItemHeight = 15
+          TabOrder = 2
+          Items.Strings = (
+            '6'
+            '7'
+            '8'
+            '9'
+            '10'
+            '11'
+            '12'
+            '13'
+            '14'
+            '15'
+            '16'
+            '17'
+            '18')
+        end
+        object AgeListUpP: TComboBox
+          Left = 200
+          Top = 80
+          Width = 65
+          Height = 23
+          Style = csDropDownList
+          ItemHeight = 15
+          TabOrder = 3
+          Items.Strings = (
+            '7'
+            '8'
+            '9'
+            '10'
+            '11'
+            '12'
+            '13'
+            '14'
+            '15'
+            '16'
+            '17'
+            ' ')
         end
         object FindPatternCategory: TButton
           Left = 240
@@ -317,8 +359,8 @@ object Form4: TForm4
           Width = 129
           Height = 33
           Caption = #1053#1072#1081#1090#1080' '#1082#1072#1090#1077#1075#1086#1088#1080#1102
-          TabOrder = 3
-          OnClick = FindMassogiCategoryClick
+          TabOrder = 4
+          OnClick = FindPatternCategoryClick
         end
       end
     end
