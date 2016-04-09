@@ -1,8 +1,8 @@
 object Form4: TForm4
-  Left = 380
-  Top = 44
-  Width = 666
-  Height = 661
+  Left = 16
+  Top = 104
+  Width = 1330
+  Height = 658
   Caption = #1046#1077#1088#1077#1073#1100#1077#1074#1082#1072
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -16,8 +16,8 @@ object Form4: TForm4
   TextHeight = 13
   object StatusBar1: TStatusBar
     Left = 0
-    Top = 584
-    Width = 650
+    Top = 581
+    Width = 1314
     Height = 19
     Panels = <
       item
@@ -26,10 +26,10 @@ object Form4: TForm4
       end>
   end
   object GroupBox2: TGroupBox
-    Left = 16
+    Left = 8
     Top = 168
     Width = 617
-    Height = 241
+    Height = 321
     Caption = #1056#1077#1079#1091#1083#1100#1090#1072#1090': '
     Font.Charset = RUSSIAN_CHARSET
     Font.Color = clBlack
@@ -47,11 +47,26 @@ object Form4: TForm4
         #1055#1086' '#1091#1082#1072#1079#1072#1085#1085#1099#1084' '#1074#1099#1096#1077' '#1082#1088#1080#1090#1077#1088#1080#1103#1084', '#1085#1080#1078#1077' '#1087#1088#1080#1074#1077#1076#1077#1085' '#1088#1077#1079#1091#1083#1100#1090#1072#1090' '#1079#1072#1087#1088#1086#1089#1072' '#1085#1072' ' +
         #1082#1072#1090#1077#1075#1086#1088#1080#1102' '#1089#1087#1086#1088#1090#1089#1084#1077#1085#1086#1074'.'
     end
-    object DBGrid1: TDBGrid
+    object Label14: TLabel
       Left = 8
       Top = 40
+      Width = 257
+      Height = 15
+      Caption = #1055#1086' '#1079#1072#1076#1072#1085#1085#1086#1081' '#1082#1072#1090#1077#1075#1086#1088#1080#1080' '#1085#1072#1081#1076#1077#1085#1086' '#1089#1087#1086#1088#1090#1089#1084#1077#1085#1086#1074':'
+    end
+    object DBText1: TDBText
+      Left = 272
+      Top = 40
+      Width = 73
+      Height = 17
+      DataField = #1050#1086#1083'-'#1074#1086' '#1089#1087#1086#1088#1090#1089#1084#1077#1085#1086' '#1074' '#1082#1072#1090#1077#1075#1086#1088#1080#1080
+      DataSource = DataModule9.DataSource24
+    end
+    object DBGrid1: TDBGrid
+      Left = 8
+      Top = 72
       Width = 601
-      Height = 193
+      Height = 241
       DataSource = DataModule9.DataSource23
       ReadOnly = True
       TabOrder = 0
@@ -60,10 +75,11 @@ object Form4: TForm4
       TitleFont.Height = -13
       TitleFont.Name = 'Times New Roman'
       TitleFont.Style = [fsBold]
+      Visible = False
     end
   end
   object PageControl1: TPageControl
-    Left = 16
+    Left = 8
     Top = 0
     Width = 617
     Height = 169
@@ -365,7 +381,196 @@ object Form4: TForm4
       end
     end
   end
+  object GroupBox4: TGroupBox
+    Left = 640
+    Top = 0
+    Width = 665
+    Height = 577
+    Caption = #1046#1077#1088#1077#1073#1100#1077#1074#1082#1072' '
+    Font.Charset = RUSSIAN_CHARSET
+    Font.Color = clBlack
+    Font.Height = -13
+    Font.Name = 'Times New Roman'
+    Font.Style = [fsBold]
+    ParentFont = False
+    TabOrder = 3
+    object Edit1: TEdit
+      Left = 8
+      Top = 16
+      Width = 129
+      Height = 23
+      TabOrder = 0
+      Text = 'Edit1'
+    end
+    object Edit2: TEdit
+      Left = 8
+      Top = 40
+      Width = 129
+      Height = 23
+      TabOrder = 1
+      Text = 'Edit1'
+    end
+    object Edit3: TEdit
+      Left = 8
+      Top = 96
+      Width = 129
+      Height = 23
+      TabOrder = 2
+      Text = 'Edit1'
+    end
+    object Edit4: TEdit
+      Left = 8
+      Top = 72
+      Width = 129
+      Height = 23
+      TabOrder = 3
+      Text = 'Edit1'
+    end
+    object Edit5: TEdit
+      Left = 8
+      Top = 208
+      Width = 129
+      Height = 23
+      TabOrder = 4
+      Text = 'Edit1'
+    end
+    object Edit6: TEdit
+      Left = 8
+      Top = 184
+      Width = 129
+      Height = 23
+      TabOrder = 5
+      Text = 'Edit1'
+    end
+    object Edit7: TEdit
+      Left = 8
+      Top = 152
+      Width = 129
+      Height = 23
+      TabOrder = 6
+      Text = 'Edit1'
+    end
+    object Edit8: TEdit
+      Left = 8
+      Top = 128
+      Width = 129
+      Height = 23
+      TabOrder = 7
+      Text = 'Edit1'
+    end
+    object Edit9: TEdit
+      Left = 8
+      Top = 320
+      Width = 129
+      Height = 23
+      TabOrder = 8
+      Text = 'Edit1'
+    end
+    object Edit10: TEdit
+      Left = 8
+      Top = 296
+      Width = 129
+      Height = 23
+      TabOrder = 9
+      Text = 'Edit1'
+    end
+    object Edit11: TEdit
+      Left = 8
+      Top = 264
+      Width = 129
+      Height = 23
+      TabOrder = 10
+      Text = 'Edit1'
+    end
+    object Edit12: TEdit
+      Left = 8
+      Top = 240
+      Width = 129
+      Height = 23
+      TabOrder = 11
+      Text = 'Edit1'
+    end
+    object Edit13: TEdit
+      Left = 8
+      Top = 408
+      Width = 129
+      Height = 23
+      TabOrder = 12
+      Text = 'Edit1'
+    end
+    object Edit14: TEdit
+      Left = 8
+      Top = 432
+      Width = 129
+      Height = 23
+      TabOrder = 13
+      Text = 'Edit1'
+    end
+    object Edit15: TEdit
+      Left = 8
+      Top = 376
+      Width = 129
+      Height = 23
+      TabOrder = 14
+      Text = 'Edit1'
+    end
+    object Edit16: TEdit
+      Left = 8
+      Top = 352
+      Width = 129
+      Height = 23
+      TabOrder = 15
+      Text = 'Edit1'
+    end
+    object Edit17: TEdit
+      Left = 8
+      Top = 464
+      Width = 129
+      Height = 23
+      TabOrder = 16
+      Text = 'Edit1'
+    end
+    object Edit18: TEdit
+      Left = 8
+      Top = 488
+      Width = 129
+      Height = 23
+      TabOrder = 17
+      Text = 'Edit1'
+    end
+    object Edit19: TEdit
+      Left = 8
+      Top = 520
+      Width = 129
+      Height = 23
+      TabOrder = 18
+      Text = 'Edit1'
+    end
+    object Edit20: TEdit
+      Left = 8
+      Top = 544
+      Width = 129
+      Height = 23
+      TabOrder = 19
+      Text = 'Edit1'
+    end
+  end
+  object sortition: TButton
+    Left = 192
+    Top = 488
+    Width = 201
+    Height = 33
+    Caption = #1057#1086#1093#1088#1072#1080#1090#1100' '#1090#1077#1082#1091#1097#1091#1102' '#1078#1077#1088#1077#1073#1100#1077#1074#1082#1091
+    Font.Charset = RUSSIAN_CHARSET
+    Font.Color = clBlack
+    Font.Height = -13
+    Font.Name = 'Times New Roman'
+    Font.Style = [fsBold, fsItalic]
+    ParentFont = False
+    TabOrder = 4
+  end
   object MainMenu1: TMainMenu
+    Left = 65528
     object N1: TMenuItem
       Caption = #1057#1087#1088#1072#1074#1082#1072
       object N3: TMenuItem

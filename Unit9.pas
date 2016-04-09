@@ -54,6 +54,8 @@ type
     DataSource22: TDataSource;
     Query23_sparring_pattern: TADOQuery;
     DataSource23: TDataSource;
+    Query24_count_sprts_ctgr: TADOQuery;
+    DataSource24: TDataSource;
     procedure FormCreate(Sender: TObject);
   private
     { Private declarations }

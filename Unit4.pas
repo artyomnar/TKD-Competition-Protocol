@@ -4,7 +4,7 @@ interface
 
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
-  Dialogs, Grids, DBGrids, StdCtrls, Menus, ComCtrls;
+  Dialogs, Grids, DBGrids, StdCtrls, Menus, ComCtrls, DBCtrls;
 
 type
   TForm4 = class(TForm)
@@ -45,6 +45,30 @@ type
     Label13: TLabel;
     AgeListUpP: TComboBox;
     FindPatternCategory: TButton;
+    GroupBox4: TGroupBox;
+    Edit1: TEdit;
+    Edit2: TEdit;
+    Edit3: TEdit;
+    Edit4: TEdit;
+    Edit5: TEdit;
+    Edit6: TEdit;
+    Edit7: TEdit;
+    Edit8: TEdit;
+    Edit9: TEdit;
+    Edit10: TEdit;
+    Edit11: TEdit;
+    Edit12: TEdit;
+    Edit13: TEdit;
+    Edit14: TEdit;
+    Edit15: TEdit;
+    Edit16: TEdit;
+    Edit17: TEdit;
+    Edit18: TEdit;
+    Edit19: TEdit;
+    Edit20: TEdit;
+    sortition: TButton;
+    Label14: TLabel;
+    DBText1: TDBText;
     procedure N2Click(Sender: TObject);
     procedure N3Click(Sender: TObject);
     procedure N4Click(Sender: TObject);
@@ -88,99 +112,132 @@ form8.visible:=true;
 end;
 
 procedure TForm4.FindMassogiCategoryClick(Sender: TObject);
-Var SGenre,SAgeUp,SAgeDown,Sweight:string;
-begin
-SGenre:=Unit4.Form4.GenreList.text;
-SWeight:=Unit4.Form4.WeightList.text;
-SAgeDown:=Unit4.Form4.AgeListDown.text;
-SAgeUp:=Unit4.Form4.AgeListUp.text;
+  Var SGenre,SAgeUp,SAgeDown,Sweight:string;
+    begin
+    SGenre:=Unit4.Form4.GenreList.text;
+    SWeight:=Unit4.Form4.WeightList.text;
+    SAgeDown:=Unit4.Form4.AgeListDown.text;
+    SAgeUp:=Unit4.Form4.AgeListUp.text;
+    DBGrid1.Visible:=true;
 
-if Unit4.Form4.AgeListDown.text = '18' then
-begin
-if Unit4.Form4.WeightList.text = '85+' then
-begin
-SWeight:='86';
-with Unit9.DataModule9.Query23_sparring_pattern do
-begin
-close;
-SQL.Clear;
-SQL.Add('select id as "№", sportsman_name as "ФИО спортсмена", genre as "Пол", age as "Возраст", weight as "Вес", team as "Команда" from sportsmen where genre ='''+SGenre+''' and age >= '''+SAgeDown+''' and weight >= '''+SWeight+'''');
-Unit9.DataModule9.Query23_sparring_pattern.Active:=false;
-Unit9.DataModule9.Query23_sparring_pattern.Active:=true;
-end;
-end
-else
-begin
-with Unit9.DataModule9.Query23_sparring_pattern do
-begin
-close;
-SQL.Clear;
-SQL.Add('select id as "№", sportsman_name as "ФИО спортсмена", genre as "Пол", age as "Возраст", weight as "Вес", team as "Команда" from sportsmen where genre ='''+SGenre+''' and age >= '''+SAgeDown+''' and weight = '''+SWeight+'''');
-Unit9.DataModule9.Query23_sparring_pattern.Active:=false;
-Unit9.DataModule9.Query23_sparring_pattern.Active:=true;
-end;
-end;
-end;
+    if Unit4.Form4.AgeListDown.text = '18' then
+    begin
+      if Unit4.Form4.WeightList.text = '85+' then
+      begin
+        SWeight:='86';
+        with Unit9.DataModule9.Query23_sparring_pattern do
+          begin
+          close;
+          SQL.Clear;
+          SQL.Add('select id as "№", sportsman_name as "ФИО спортсмена", genre as "Пол", age as "Возраст", weight as "Вес", team as "Команда" from sportsmen where genre ='''+SGenre+''' and age >= '''+SAgeDown+''' and weight >= '''+SWeight+'''');
+          Unit9.DataModule9.Query23_sparring_pattern.Active:=false;
+          Unit9.DataModule9.Query23_sparring_pattern.Active:=true;
+          end;
+        with Unit9.DataModule9.Query24_count_sprts_ctgr do
+          begin
+          close;
+          SQL.Clear;
+          SQL.Add('select count(id) as "Кол-во спортсмено в категории" from sportsmen where genre ='''+SGenre+''' and age >= '''+SAgeDown+''' and weight >= '''+SWeight+'''');
+          Unit9.DataModule9.Query24_count_sprts_ctgr.Active:=false;
+          Unit9.DataModule9.Query24_count_sprts_ctgr.Active:=true;
+          end;
+      end
+    else
+    begin
+      with Unit9.DataModule9.Query23_sparring_pattern do
+        begin
+          close;
+          SQL.Clear;
+          SQL.Add('select id as "№", sportsman_name as "ФИО спортсмена", genre as "Пол", age as "Возраст", weight as "Вес", team as "Команда" from sportsmen where genre ='''+SGenre+''' and age >= '''+SAgeDown+''' and weight = '''+SWeight+'''');
+          Unit9.DataModule9.Query23_sparring_pattern.Active:=false;
+          Unit9.DataModule9.Query23_sparring_pattern.Active:=true;
+        end;
+      with Unit9.DataModule9.Query24_count_sprts_ctgr do
+        begin
+          close;
+          SQL.Clear;
+          SQL.Add('select count(id) as "Кол-во спортсмено в категории" from sportsmen where genre ='''+SGenre+''' and age >= '''+SAgeDown+''' and weight = '''+SWeight+'''');
+          Unit9.DataModule9.Query24_count_sprts_ctgr.Active:=false;
+          Unit9.DataModule9.Query24_count_sprts_ctgr.Active:=true;
+        end;
+      end;
+    end;
 
-if  Unit4.Form4.AgeListDown.text <> '18' then
-begin
-if Unit4.Form4.WeightList.text = '85+' then
-begin
-SWeight:='86';
-with Unit9.DataModule9.Query23_sparring_pattern do
-begin
-close;
-SQL.Clear;
-SQL.Add('select id as "№", sportsman_name as "ФИО спортсмена", genre as "Пол", age as "Возраст", weight as "Вес", team as "Команда" from sportsmen where genre ='''+SGenre+''' and age >= '''+SAgeDown+''' and age <= '''+SAgeUp+''' and weight >= '''+SWeight+'''');
-Unit9.DataModule9.Query23_sparring_pattern.Active:=false;
-Unit9.DataModule9.Query23_sparring_pattern.Active:=true;
-end;
-end
-else
-begin
-with Unit9.DataModule9.Query23_sparring_pattern do
-begin
-close;
-SQL.Clear;
-SQL.Add('select id as "№", sportsman_name as "ФИО спортсмена", genre as "Пол", age as "Возраст", weight as "Вес", team as "Команда" from sportsmen where genre ='''+SGenre+''' and age >= '''+SAgeDown+''' and age <= '''+SAgeUp+''' and weight = '''+SWeight+'''');
-Unit9.DataModule9.Query23_sparring_pattern.Active:=false;
-Unit9.DataModule9.Query23_sparring_pattern.Active:=true;
-end;
-end;
-end;
-end;
+    if  Unit4.Form4.AgeListDown.text <> '18' then
+    begin
+      if Unit4.Form4.WeightList.text = '85+' then
+      begin
+        SWeight:='86';
+        with Unit9.DataModule9.Query23_sparring_pattern do
+        begin
+          close;
+          SQL.Clear;
+          SQL.Add('select id as "№", sportsman_name as "ФИО спортсмена", genre as "Пол", age as "Возраст", weight as "Вес", team as "Команда" from sportsmen where genre ='''+SGenre+''' and age >= '''+SAgeDown+''' and age <= '''+SAgeUp+''' and weight >= '''+SWeight+'''');
+          Unit9.DataModule9.Query23_sparring_pattern.Active:=false;
+          Unit9.DataModule9.Query23_sparring_pattern.Active:=true;
+        end;
+        with Unit9.DataModule9.Query24_count_sprts_ctgr do
+        begin
+          close;
+          SQL.Clear;
+          SQL.Add('select count(id) as "Кол-во спортсмено в категории" from sportsmen where genre ='''+SGenre+''' and age >= '''+SAgeDown+''' and age <= '''+SAgeUp+''' and weight >= '''+SWeight+'''');
+          Unit9.DataModule9.Query24_count_sprts_ctgr.Active:=false;
+          Unit9.DataModule9.Query24_count_sprts_ctgr.Active:=true;
+        end;
+      end
+      else
+      begin
+      with Unit9.DataModule9.Query23_sparring_pattern do
+        begin
+          close;
+          SQL.Clear;
+          SQL.Add('select id as "№", sportsman_name as "ФИО спортсмена", genre as "Пол", age as "Возраст", weight as "Вес", team as "Команда" from sportsmen where genre ='''+SGenre+''' and age >= '''+SAgeDown+''' and age <= '''+SAgeUp+''' and weight = '''+SWeight+'''');
+          Unit9.DataModule9.Query23_sparring_pattern.Active:=false;
+          Unit9.DataModule9.Query23_sparring_pattern.Active:=true;
+        end;
+      with Unit9.DataModule9.Query24_count_sprts_ctgr do
+        begin
+          close;
+          SQL.Clear;
+          SQL.Add('select count(id) as "Кол-во спортсмено в категории" from sportsmen where genre ='''+SGenre+''' and age >= '''+SAgeDown+''' and age <= '''+SAgeUp+''' and weight = '''+SWeight+'''');
+          Unit9.DataModule9.Query24_count_sprts_ctgr.Active:=false;
+          Unit9.DataModule9.Query24_count_sprts_ctgr.Active:=true;
+        end;
+      end;
+    end;
+  end;
 
 procedure TForm4.FindPatternCategoryClick(Sender: TObject);
-Var PGenre, PAgeDown, PAgeUp, Belt:String;
-begin
-PGenre:=Unit4.Form4.GenreListPattern.text;
-PAgeDown:=Unit4.Form4.AgeListDownP.text;
-PAgeUp:=Unit4.Form4.AgeListUpP.text;
-Belt:=Unit4.Form4.BeltList.text;
+  Var PGenre, PAgeDown, PAgeUp, Belt:String;
+  begin
+  PGenre:=Unit4.Form4.GenreListPattern.text;
+  PAgeDown:=Unit4.Form4.AgeListDownP.text;
+  PAgeUp:=Unit4.Form4.AgeListUpP.text;
+  Belt:=Unit4.Form4.BeltList.text;
 
-if Belt = '10-6 гып' then
-begin
-if PAgeDown = '18' then
-begin
-with Unit9.DataModule9.Query23_sparring_pattern do
-begin
-close;
-SQL.Clear;
-SQL.Add('select id as "№", sportsman_name as "ФИО спортсмена", genre as "Пол", age as "Возраст", belt_degree as "Степень пояса", team as "Команда" from sportsmen where genre ='''+PGenre+''' and age >= '''+PAgeDown+''' and (belt_degree like ''%10 гып%'' or belt_degree like ''%9 гып%'' or belt_degree like ''%8 гып%'' or belt_degree like ''%7 гып%'' or belt_degree like ''%6 гып%'')');
-Unit9.DataModule9.Query23_sparring_pattern.Active:=false;
-Unit9.DataModule9.Query23_sparring_pattern.Active:=true;
-end;
-end
-else
-with Unit9.DataModule9.Query23_sparring_pattern do
-begin
-close;
-SQL.Clear;
-SQL.Add('select id as "№", sportsman_name as "ФИО спортсмена", genre as "Пол", age as "Возраст", belt_degree as "Степень пояса", team as "Команда" from sportsmen where genre ='''+PGenre+''' and age >= '''+PAgeDown+''' and age <= '''+PAgeUp+''' and (belt_degree like ''%10 гып%'' or belt_degree like ''%9 гып%'' or belt_degree like ''%8 гып%'' or belt_degree like ''%7 гып%'' or belt_degree like ''%6 гып%'')');
-Unit9.DataModule9.Query23_sparring_pattern.Active:=false;
-Unit9.DataModule9.Query23_sparring_pattern.Active:=true;
-end;
-end;
+  if Belt = '10-6 гып' then
+    begin
+      if PAgeDown = '18' then
+        begin
+          with Unit9.DataModule9.Query23_sparring_pattern do
+            begin
+              close;
+              SQL.Clear;
+              SQL.Add('select id as "№", sportsman_name as "ФИО спортсмена", genre as "Пол", age as "Возраст", belt_degree as "Степень пояса", team as "Команда" from sportsmen where genre ='''+PGenre+''' and age >= '''+PAgeDown+''' and (belt_degree like ''%10 гып%'' or belt_degree like ''%9 гып%'' or belt_degree like ''%8 гып%'' or belt_degree like ''%7 гып%'' or belt_degree like ''%6 гып%'')');
+              Unit9.DataModule9.Query23_sparring_pattern.Active:=false;
+              Unit9.DataModule9.Query23_sparring_pattern.Active:=true;
+            end;
+        end
+      else
+        with Unit9.DataModule9.Query23_sparring_pattern do
+          begin
+            close;
+            SQL.Clear;
+            SQL.Add('select id as "№", sportsman_name as "ФИО спортсмена", genre as "Пол", age as "Возраст", belt_degree as "Степень пояса", team as "Команда" from sportsmen where genre ='''+PGenre+''' and age >= '''+PAgeDown+''' and age <= '''+PAgeUp+''' and (belt_degree like ''%10 гып%'' or belt_degree like ''%9 гып%'' or belt_degree like ''%8 гып%'' or belt_degree like ''%7 гып%'' or belt_degree like ''%6 гып%'')');
+            Unit9.DataModule9.Query23_sparring_pattern.Active:=false;
+            Unit9.DataModule9.Query23_sparring_pattern.Active:=true;
+          end;
+      end;
 
 if Belt = '5-1 гып' then
 begin
