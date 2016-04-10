@@ -1,6 +1,6 @@
 object Form4: TForm4
-  Left = 16
-  Top = 104
+  Left = 14
+  Top = 32
   Width = 1330
   Height = 658
   Caption = #1046#1077#1088#1077#1073#1100#1077#1074#1082#1072
@@ -83,7 +83,7 @@ object Form4: TForm4
     Top = 0
     Width = 617
     Height = 169
-    ActivePage = TabSheet1
+    ActivePage = TabSheet2
     TabOrder = 2
     object TabSheet1: TTabSheet
       Caption = #1057#1087#1072#1088#1088#1080#1085#1075
@@ -556,7 +556,7 @@ object Form4: TForm4
     end
   end
   object sortition: TButton
-    Left = 192
+    Left = 216
     Top = 488
     Width = 201
     Height = 33
