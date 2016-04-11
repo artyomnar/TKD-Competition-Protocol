@@ -1,6 +1,6 @@
 object Form5: TForm5
-  Left = 153
-  Top = 111
+  Left = 70
+  Top = 131
   Width = 1212
   Height = 567
   Caption = #1057#1086#1088#1077#1074#1085#1086#1074#1072#1090#1077#1083#1100#1085#1099#1081' '#1088#1077#1078#1080#1084
@@ -29,7 +29,7 @@ object Form5: TForm5
     Left = 16
     Top = 16
     Width = 569
-    Height = 89
+    Height = 113
     Caption = #1042#1099#1073#1088#1072#1090#1100' '#1082#1072#1090#1077#1075#1086#1088#1080#1102': '
     TabOrder = 1
     object Label1: TLabel
@@ -115,6 +115,7 @@ object Form5: TForm5
       TitleFont.Height = -11
       TitleFont.Name = 'Tahoma'
       TitleFont.Style = []
+      Visible = False
     end
   end
   object GroupBox3: TGroupBox
@@ -216,65 +217,65 @@ object Form5: TForm5
       Color = clBlue
       TabOrder = 3
     end
-    object Button1: TButton
-      Left = 112
+    object RScoreI: TButton
+      Left = 160
       Top = 248
       Width = 105
       Height = 33
       Caption = #1041#1072#1083#1083
       Enabled = False
       TabOrder = 4
-      OnClick = Button1Click
+      OnClick = RScoreIClick
     end
-    object Button2: TButton
-      Left = 112
+    object RFallI: TButton
+      Left = 160
       Top = 296
       Width = 105
       Height = 33
       Caption = #1063#1091#1081
       Enabled = False
       TabOrder = 5
-      OnClick = Button2Click
+      OnClick = RFallIClick
     end
-    object Button3: TButton
-      Left = 112
+    object RPenaltyI: TButton
+      Left = 160
       Top = 344
       Width = 105
       Height = 33
       Caption = #1050#1072#1085#1078#1091#1085
       Enabled = False
       TabOrder = 6
-      OnClick = Button3Click
+      OnClick = RPenaltyIClick
     end
-    object Button4: TButton
-      Left = 336
+    object BScoreI: TButton
+      Left = 288
       Top = 248
       Width = 105
       Height = 33
       Caption = #1041#1072#1083#1083
       Enabled = False
       TabOrder = 7
-      OnClick = Button4Click
+      OnClick = BScoreIClick
     end
-    object Button5: TButton
-      Left = 336
+    object BFallI: TButton
+      Left = 288
       Top = 296
       Width = 105
       Height = 33
       Caption = #1063#1091#1081
       Enabled = False
       TabOrder = 8
-      OnClick = Button5Click
+      OnClick = BFallIClick
     end
-    object Button6: TButton
-      Left = 336
+    object BPenaltyI: TButton
+      Left = 288
       Top = 344
       Width = 105
       Height = 33
       Caption = #1050#1072#1085#1078#1091#1085
       Enabled = False
       TabOrder = 9
-      OnClick = Button6Click
+      OnClick = BPenaltyIClick
     end
     object Panel5: TPanel
       Left = 184
@@ -418,6 +419,102 @@ object Form5: TForm5
       Font.Style = [fsBold]
       ParentFont = False
       TabOrder = 20
+    end
+    object RScoreDec: TButton
+      Left = 144
+      Top = 248
+      Width = 17
+      Height = 33
+      Caption = '-'
+      Enabled = False
+      Font.Charset = RUSSIAN_CHARSET
+      Font.Color = clBlack
+      Font.Height = -19
+      Font.Name = 'Times New Roman'
+      Font.Style = [fsBold]
+      ParentFont = False
+      TabOrder = 21
+      OnClick = RScoreDecClick
+    end
+    object RFallDec: TButton
+      Left = 144
+      Top = 296
+      Width = 17
+      Height = 33
+      Caption = '-'
+      Enabled = False
+      Font.Charset = RUSSIAN_CHARSET
+      Font.Color = clBlack
+      Font.Height = -19
+      Font.Name = 'Times New Roman'
+      Font.Style = [fsBold]
+      ParentFont = False
+      TabOrder = 22
+      OnClick = RFallDecClick
+    end
+    object RPenaltyDec: TButton
+      Left = 144
+      Top = 344
+      Width = 17
+      Height = 33
+      Caption = '-'
+      Enabled = False
+      Font.Charset = RUSSIAN_CHARSET
+      Font.Color = clBlack
+      Font.Height = -19
+      Font.Name = 'Times New Roman'
+      Font.Style = [fsBold]
+      ParentFont = False
+      TabOrder = 23
+      OnClick = RPenaltyDecClick
+    end
+    object BScoreDec: TButton
+      Left = 392
+      Top = 248
+      Width = 17
+      Height = 33
+      Caption = '-'
+      Enabled = False
+      Font.Charset = RUSSIAN_CHARSET
+      Font.Color = clBlack
+      Font.Height = -19
+      Font.Name = 'Times New Roman'
+      Font.Style = [fsBold]
+      ParentFont = False
+      TabOrder = 24
+      OnClick = BScoreDecClick
+    end
+    object BFallDec: TButton
+      Left = 392
+      Top = 296
+      Width = 17
+      Height = 33
+      Caption = '-'
+      Enabled = False
+      Font.Charset = RUSSIAN_CHARSET
+      Font.Color = clBlack
+      Font.Height = -19
+      Font.Name = 'Times New Roman'
+      Font.Style = [fsBold]
+      ParentFont = False
+      TabOrder = 25
+      OnClick = BFallDecClick
+    end
+    object BPenaltyDec: TButton
+      Left = 392
+      Top = 344
+      Width = 17
+      Height = 33
+      Caption = '-'
+      Enabled = False
+      Font.Charset = RUSSIAN_CHARSET
+      Font.Color = clBlack
+      Font.Height = -19
+      Font.Name = 'Times New Roman'
+      Font.Style = [fsBold]
+      ParentFont = False
+      TabOrder = 26
+      OnClick = BPenaltyDecClick
     end
   end
   object Timer1: TTimer
