@@ -12,6 +12,7 @@ object Form3: TForm3
   Font.Style = []
   Menu = MainMenu1
   OldCreateOrder = False
+  Position = poDesktopCenter
   PixelsPerInch = 96
   TextHeight = 13
   object GroupBox1: TGroupBox
@@ -269,7 +270,7 @@ object Form3: TForm3
         object Label19: TLabel
           Left = 8
           Top = 88
-          Width = 225
+          Width = 240
           Height = 15
           Caption = '------------------------------------------------------------'
         end

@@ -12,6 +12,7 @@ object Form2: TForm2
   Font.Style = []
   Menu = MainMenu1
   OldCreateOrder = False
+  Position = poDesktopCenter
   PixelsPerInch = 96
   TextHeight = 13
   object PageControl1: TPageControl

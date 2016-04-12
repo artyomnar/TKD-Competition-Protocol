@@ -1,9 +1,10 @@
 object Form1: TForm1
   Left = 239
   Top = 202
-  Width = 931
-  Height = 404
+  BorderStyle = bsSingle
   Caption = #1043#1083#1072#1074#1085#1086#1077' '#1084#1077#1085#1102
+  ClientHeight = 346
+  ClientWidth = 915
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -12,6 +13,7 @@ object Form1: TForm1
   Font.Style = []
   Menu = MainMenu1
   OldCreateOrder = False
+  Position = poDesktopCenter
   PixelsPerInch = 96
   TextHeight = 13
   object Label1: TLabel

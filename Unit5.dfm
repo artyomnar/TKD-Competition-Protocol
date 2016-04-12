@@ -12,6 +12,7 @@ object Form5: TForm5
   Font.Style = []
   Menu = MainMenu1
   OldCreateOrder = False
+  Position = poDesktopCenter
   PixelsPerInch = 96
   TextHeight = 13
   object StatusBar1: TStatusBar

@@ -4,7 +4,8 @@ interface
 
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
-  Dialogs, Grids, DBGrids, StdCtrls, Menus, ComCtrls, DBCtrls;
+  Dialogs, Grids, DBGrids, StdCtrls, Menus, ComCtrls, DBCtrls, jpeg,
+  ExtCtrls;
 
 type
   TForm4 = class(TForm)
@@ -47,34 +48,26 @@ type
     FindPatternCategory: TButton;
     GroupBox4: TGroupBox;
     Edit1: TEdit;
-    Edit2: TEdit;
-    Edit3: TEdit;
-    Edit4: TEdit;
-    Edit5: TEdit;
-    Edit6: TEdit;
-    Edit7: TEdit;
-    Edit8: TEdit;
-    Edit9: TEdit;
-    Edit10: TEdit;
-    Edit11: TEdit;
-    Edit12: TEdit;
-    Edit13: TEdit;
-    Edit14: TEdit;
-    Edit15: TEdit;
-    Edit16: TEdit;
-    Edit17: TEdit;
-    Edit18: TEdit;
-    Edit19: TEdit;
-    Edit20: TEdit;
     sortition: TButton;
     Label14: TLabel;
     DBText1: TDBText;
+    Label15: TLabel;
+    Panel1: TPanel;
+    Image1: TImage;
+    Edit2: TEdit;
+    Panel2: TPanel;
+    Image2: TImage;
+    Edit3: TEdit;
+    Edit4: TEdit;
+    Edit5: TEdit;
     procedure N2Click(Sender: TObject);
     procedure N3Click(Sender: TObject);
     procedure N4Click(Sender: TObject);
     procedure N5Click(Sender: TObject);
     procedure FindMassogiCategoryClick(Sender: TObject);
     procedure FindPatternCategoryClick(Sender: TObject);
+    procedure sortitionClick(Sender: TObject);
+
   private
     { Private declarations }
   public
@@ -425,6 +418,15 @@ procedure TForm4.FindPatternCategoryClick(Sender: TObject);
       end;
     end;
   end;
+end;
+
+procedure TForm4.sortitionClick(Sender: TObject);
+Var count:integer;
+begin
+count:=StrToInt(edit1.text);
+if count = 1 then panel1.visible:=true;
+if count = 2 then panel2.visible:=true;
+
 end;
 
 end.
