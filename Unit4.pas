@@ -5,7 +5,7 @@ interface
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
   Dialogs, Grids, DBGrids, StdCtrls, Menus, ComCtrls, DBCtrls, jpeg,
-  ExtCtrls;
+  ExtCtrls, ExtDlgs;
 
 type
   TForm4 = class(TForm)
@@ -47,26 +47,25 @@ type
     AgeListUpP: TComboBox;
     FindPatternCategory: TButton;
     GroupBox4: TGroupBox;
-    Edit1: TEdit;
-    sortition: TButton;
+    OpenTemplate: TButton;
     Label14: TLabel;
     DBText1: TDBText;
     Label15: TLabel;
-    Panel1: TPanel;
-    Image1: TImage;
-    Edit2: TEdit;
-    Panel2: TPanel;
-    Image2: TImage;
-    Edit3: TEdit;
-    Edit4: TEdit;
-    Edit5: TEdit;
+    RichEdit1: TRichEdit;
+    OpenDialog1: TOpenDialog;
+    SaveDialog1: TSaveDialog;
+    PrintDialog1: TPrintDialog;
+    SaveSortition: TButton;
+    PrintSortition: TButton;
     procedure N2Click(Sender: TObject);
     procedure N3Click(Sender: TObject);
     procedure N4Click(Sender: TObject);
     procedure N5Click(Sender: TObject);
     procedure FindMassogiCategoryClick(Sender: TObject);
     procedure FindPatternCategoryClick(Sender: TObject);
-    procedure sortitionClick(Sender: TObject);
+    procedure OpenTemplateClick(Sender: TObject);
+    procedure SaveSortitionClick(Sender: TObject);
+   // procedure PrintSortitionClick(Sender: TObject);
 
   private
     { Private declarations }
@@ -420,13 +419,25 @@ procedure TForm4.FindPatternCategoryClick(Sender: TObject);
   end;
 end;
 
-procedure TForm4.sortitionClick(Sender: TObject);
-Var count:integer;
+procedure TForm4.OpenTemplateClick(Sender: TObject);
 begin
-count:=StrToInt(edit1.text);
-if count = 1 then panel1.visible:=true;
-if count = 2 then panel2.visible:=true;
-
+RichEdit1.Visible:=true;
+if OpenDialog1.Execute = true then
+RichEdit1.Lines.LoadFromFile(OpenDialog1.FileName);
 end;
+
+procedure TForm4.SaveSortitionClick(Sender: TObject);
+begin
+if SaveDialog1.Execute = true then
+RichEdit1.Lines.SaveToFile(SaveDialog1.FileName);
+end;
+
+{procedure TForm4.PrintSortitionClick(Sender: TObject) ;
+begin                                                  
+if PrintDialog1.Execute then
+begin
+RichEdit1.Print(Form4.Caption);
+end;
+end; }
 
 end.

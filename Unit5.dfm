@@ -30,94 +30,9 @@ object Form5: TForm5
     Left = 16
     Top = 16
     Width = 569
-    Height = 113
+    Height = 465
     Caption = #1042#1099#1073#1088#1072#1090#1100' '#1082#1072#1090#1077#1075#1086#1088#1080#1102': '
     TabOrder = 1
-    object Label1: TLabel
-      Left = 8
-      Top = 32
-      Width = 19
-      Height = 13
-      Caption = #1055#1086#1083
-    end
-    object Label2: TLabel
-      Left = 8
-      Top = 56
-      Width = 40
-      Height = 13
-      Caption = #1042#1086#1079#1088#1072#1089#1090
-    end
-    object Label3: TLabel
-      Left = 261
-      Top = 32
-      Width = 148
-      Height = 13
-      Caption = #1042#1077#1089' ('#1087#1088#1080' '#1091#1095#1072#1089#1090#1080#1080' '#1074' '#1089#1087#1072#1088#1080#1085#1075#1077')'
-    end
-    object Label4: TLabel
-      Left = 219
-      Top = 56
-      Width = 190
-      Height = 13
-      Caption = #1057#1090#1077#1087#1077#1085#1100' '#1087#1086#1103#1089#1072' ('#1087#1088#1080' '#1091#1095#1072#1089#1090#1080#1080' '#1074' '#1090#1091#1083#1103#1093')'
-    end
-    object ComboBox2: TComboBox
-      Left = 64
-      Top = 48
-      Width = 145
-      Height = 21
-      ItemHeight = 13
-      TabOrder = 0
-      Text = 'ComboBox1'
-    end
-    object ComboBox1: TComboBox
-      Left = 64
-      Top = 24
-      Width = 145
-      Height = 21
-      ItemHeight = 13
-      TabOrder = 1
-      Text = 'ComboBox1'
-    end
-    object ComboBox3: TComboBox
-      Left = 416
-      Top = 24
-      Width = 145
-      Height = 21
-      ItemHeight = 13
-      TabOrder = 2
-      Text = 'ComboBox1'
-    end
-    object ComboBox4: TComboBox
-      Left = 416
-      Top = 48
-      Width = 145
-      Height = 21
-      ItemHeight = 13
-      TabOrder = 3
-      Text = 'ComboBox1'
-    end
-  end
-  object GroupBox2: TGroupBox
-    Left = 16
-    Top = 136
-    Width = 569
-    Height = 345
-    Caption = #1056#1077#1079#1091#1083#1100#1090#1072#1090': '
-    TabOrder = 2
-    object DBGrid1: TDBGrid
-      Left = 8
-      Top = 24
-      Width = 553
-      Height = 305
-      TabOrder = 0
-      TitleFont.Charset = DEFAULT_CHARSET
-      TitleFont.Color = clWindowText
-      TitleFont.Height = -11
-      TitleFont.Name = 'Tahoma'
-      TitleFont.Style = []
-      Visible = False
-    end
   end
   object GroupBox3: TGroupBox
     Left = 592
@@ -125,7 +40,7 @@ object Form5: TForm5
     Width = 585
     Height = 465
     Caption = #1055#1086#1076#1089#1095#1077#1090' '
-    TabOrder = 3
+    TabOrder = 2
     object Label5: TLabel
       Left = 240
       Top = 16

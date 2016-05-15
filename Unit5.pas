@@ -10,16 +10,6 @@ type
   TForm5 = class(TForm)
     StatusBar1: TStatusBar;
     GroupBox1: TGroupBox;
-    Label1: TLabel;
-    Label2: TLabel;
-    ComboBox2: TComboBox;
-    ComboBox1: TComboBox;
-    Label3: TLabel;
-    ComboBox3: TComboBox;
-    ComboBox4: TComboBox;
-    Label4: TLabel;
-    GroupBox2: TGroupBox;
-    DBGrid1: TDBGrid;
     Timer1: TTimer;
     MainMenu1: TMainMenu;
     N1: TMenuItem;

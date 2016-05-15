@@ -8,8 +8,8 @@ object DataModule9: TDataModule9
     Connected = True
     ConnectionString = 
       'Provider=SQLOLEDB.1;Integrated Security=SSPI;Persist Security In' +
-      'fo=False;Initial Catalog=TKDdb;Data Source='#1040#1056#1058#1045#1052'-'#1055#1050'\MSSQLSERVER1' +
-      ';'
+      'fo=False;Initial Catalog=TKDdb;Data Source='#1040#1056#1058#1045#1052'-'#1055#1050'\SQLExpress20' +
+      '12;'
     LoginPrompt = False
     Provider = 'SQLOLEDB.1'
     Left = 32
