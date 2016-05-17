@@ -1,6 +1,6 @@
 object Form5: TForm5
-  Left = 70
-  Top = 131
+  Left = 64
+  Top = 121
   Width = 1212
   Height = 567
   Caption = #1057#1086#1088#1077#1074#1085#1086#1074#1072#1090#1077#1083#1100#1085#1099#1081' '#1088#1077#1078#1080#1084
@@ -32,7 +32,41 @@ object Form5: TForm5
     Width = 569
     Height = 465
     Caption = #1042#1099#1073#1088#1072#1090#1100' '#1082#1072#1090#1077#1075#1086#1088#1080#1102': '
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -13
+    Font.Name = 'Tahoma'
+    Font.Style = [fsBold]
+    ParentFont = False
     TabOrder = 1
+    object OpenCategory: TButton
+      Left = 8
+      Top = 24
+      Width = 153
+      Height = 33
+      Caption = #1054#1090#1082#1088#1099#1090#1100' '#1082#1072#1090#1077#1075#1086#1088#1080#1102
+      TabOrder = 0
+      OnClick = OpenCategoryClick
+    end
+    object RichEdit1: TRichEdit
+      Left = 8
+      Top = 64
+      Width = 553
+      Height = 393
+      Lines.Strings = (
+        '')
+      TabOrder = 1
+      Visible = False
+    end
+    object SaveResults: TButton
+      Left = 176
+      Top = 24
+      Width = 153
+      Height = 33
+      Caption = #1057#1086#1093#1088#1072#1085#1080#1090#1100' '#1088#1077#1079#1091#1083#1100#1090#1072#1090
+      TabOrder = 2
+      OnClick = SaveResultsClick
+    end
   end
   object GroupBox3: TGroupBox
     Left = 592
@@ -459,5 +493,25 @@ object Form5: TForm5
       Caption = #1053#1072#1079#1072#1076
       OnClick = N2Click
     end
+  end
+  object OpenCategoryFile: TOpenDialog
+    Filter = '.txt'
+    InitialDir = 
+      'E:\'#1059#1095#1077#1073#1072'\4 '#1082#1091#1088#1089'\'#1044#1080#1087#1083#1086#1084#1085#1099#1081' '#1087#1088#1086#1077#1082#1090'\TKD Competition Protocol\Comple' +
+      'ted Sortition'
+    Left = 384
+    Top = 32
+  end
+  object SaveProtocol: TSaveDialog
+    Filter = '.txt'
+    InitialDir = 
+      'E:\'#1059#1095#1077#1073#1072'\4 '#1082#1091#1088#1089'\'#1044#1080#1087#1083#1086#1084#1085#1099#1081' '#1087#1088#1086#1077#1082#1090'\TKD Competition Protocol\Protoc' +
+      'ols'
+    Left = 464
+    Top = 32
+  end
+  object PrintProtocol: TPrintDialog
+    Left = 536
+    Top = 32
   end
 end

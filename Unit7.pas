@@ -18,6 +18,8 @@ type
     N5: TMenuItem;
     Label1: TLabel;
     Label2: TLabel;
+    Label3: TLabel;
+    Label4: TLabel;
     procedure N2Click(Sender: TObject);
     procedure N3Click(Sender: TObject);
     procedure N5Click(Sender: TObject);

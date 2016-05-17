@@ -49,6 +49,12 @@ type
     BScoreDec: TButton;
     BFallDec: TButton;
     BPenaltyDec: TButton;
+    OpenCategory: TButton;
+    RichEdit1: TRichEdit;
+    OpenCategoryFile: TOpenDialog;
+    SaveProtocol: TSaveDialog;
+    PrintProtocol: TPrintDialog;
+    SaveResults: TButton;
     procedure N2Click(Sender: TObject);
     procedure N3Click(Sender: TObject);
     procedure N4Click(Sender: TObject);
@@ -68,6 +74,8 @@ type
     procedure BFallDecClick(Sender: TObject);
     procedure RPenaltyDecClick(Sender: TObject);
     procedure BPenaltyDecClick(Sender: TObject);
+    procedure OpenCategoryClick(Sender: TObject);
+    procedure SaveResultsClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -325,4 +333,16 @@ panel2.caption:= IntToStr(bluescore);
 panel12.Caption:= IntToStr(bluepenalty);
 end;
 
+procedure TForm5.OpenCategoryClick(Sender: TObject);
+begin
+RichEdit1.Visible:=true;
+if OpenCategoryFile.Execute = true then
+RichEdit1.Lines.LoadFromFile(OpenCategoryFile.FileName);
+end;
+
+procedure TForm5.SaveResultsClick(Sender: TObject);
+begin
+if SaveProtocol.Execute = true then
+RichEdit1.Lines.SaveToFile(SaveProtocol.FileName);
+end;
 end.
