@@ -442,6 +442,7 @@ object Form4: TForm4
       Font.Style = [fsBold, fsItalic]
       ParentFont = False
       TabOrder = 2
+      OnClick = PrintSortitionClick
     end
   end
   object OpenTemplate: TButton

@@ -53,8 +53,9 @@ type
     RichEdit1: TRichEdit;
     OpenCategoryFile: TOpenDialog;
     SaveProtocol: TSaveDialog;
-    PrintProtocol: TPrintDialog;
+    PrintReadyProtocol: TPrintDialog;
     SaveResults: TButton;
+    PrintProrocol: TButton;
     procedure N2Click(Sender: TObject);
     procedure N3Click(Sender: TObject);
     procedure N4Click(Sender: TObject);
@@ -76,6 +77,7 @@ type
     procedure BPenaltyDecClick(Sender: TObject);
     procedure OpenCategoryClick(Sender: TObject);
     procedure SaveResultsClick(Sender: TObject);
+    procedure PrintProrocolClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -345,4 +347,10 @@ begin
 if SaveProtocol.Execute = true then
 RichEdit1.Lines.SaveToFile(SaveProtocol.FileName);
 end;
+procedure TForm5.PrintProrocolClick(Sender: TObject);
+begin
+if PrintReadyProtocol.Execute = true then
+RichEdit1.Print(Form5.Caption);
+end;
+
 end.

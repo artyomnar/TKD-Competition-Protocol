@@ -63,9 +63,18 @@ object Form5: TForm5
       Top = 24
       Width = 153
       Height = 33
-      Caption = #1057#1086#1093#1088#1072#1085#1080#1090#1100' '#1088#1077#1079#1091#1083#1100#1090#1072#1090
+      Caption = #1057#1086#1093#1088#1072#1085#1080#1090#1100' '#1087#1088#1086#1090#1086#1082#1086#1083
       TabOrder = 2
       OnClick = SaveResultsClick
+    end
+    object PrintProrocol: TButton
+      Left = 344
+      Top = 24
+      Width = 153
+      Height = 33
+      Caption = #1055#1077#1095#1072#1090#1100' '#1087#1088#1086#1090#1086#1082#1086#1083#1072
+      TabOrder = 3
+      OnClick = PrintProrocolClick
     end
   end
   object GroupBox3: TGroupBox
@@ -474,6 +483,7 @@ object Form5: TForm5
     Top = 160
   end
   object MainMenu1: TMainMenu
+    Left = 16
     object N1: TMenuItem
       Caption = #1057#1087#1088#1072#1074#1082#1072
       object N3: TMenuItem
@@ -499,19 +509,19 @@ object Form5: TForm5
     InitialDir = 
       'E:\'#1059#1095#1077#1073#1072'\4 '#1082#1091#1088#1089'\'#1044#1080#1087#1083#1086#1084#1085#1099#1081' '#1087#1088#1086#1077#1082#1090'\TKD Competition Protocol\Comple' +
       'ted Sortition'
-    Left = 384
-    Top = 32
+    Left = 344
+    Top = 424
   end
   object SaveProtocol: TSaveDialog
     Filter = '.txt'
     InitialDir = 
       'E:\'#1059#1095#1077#1073#1072'\4 '#1082#1091#1088#1089'\'#1044#1080#1087#1083#1086#1084#1085#1099#1081' '#1087#1088#1086#1077#1082#1090'\TKD Competition Protocol\Protoc' +
       'ols'
-    Left = 464
-    Top = 32
+    Left = 424
+    Top = 424
   end
-  object PrintProtocol: TPrintDialog
-    Left = 536
-    Top = 32
+  object PrintReadyProtocol: TPrintDialog
+    Left = 512
+    Top = 424
   end
 end

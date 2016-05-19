@@ -65,6 +65,7 @@ type
     procedure FindPatternCategoryClick(Sender: TObject);
     procedure OpenTemplateClick(Sender: TObject);
     procedure SaveSortitionClick(Sender: TObject);
+    procedure PrintSortitionClick(Sender: TObject);
    // procedure PrintSortitionClick(Sender: TObject);
 
   private
@@ -432,12 +433,10 @@ if SaveDialog1.Execute = true then
 RichEdit1.Lines.SaveToFile(SaveDialog1.FileName);
 end;
 
-{procedure TForm4.PrintSortitionClick(Sender: TObject) ;
-begin                                                  
-if PrintDialog1.Execute then
+procedure TForm4.PrintSortitionClick(Sender: TObject);
 begin
+if PrintDialog1.Execute = true then
 RichEdit1.Print(Form4.Caption);
 end;
-end; }
 
 end.
