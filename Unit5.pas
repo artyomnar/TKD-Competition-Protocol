@@ -4,7 +4,7 @@ interface
 
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
-  Dialogs, ExtCtrls, StdCtrls, Grids, DBGrids, ComCtrls, Menus;
+  Dialogs, ExtCtrls, StdCtrls, Grids, DBGrids, ComCtrls, Menus, Buttons;
 
 type
   TForm5 = class(TForm)
@@ -17,24 +17,21 @@ type
     N4: TMenuItem;
     N5: TMenuItem;
     N2: TMenuItem;
-    GroupBox3: TGroupBox;
-    Label5: TLabel;
-    Label6: TLabel;
-    Label7: TLabel;
-    Label8: TLabel;
+    OpenCategory: TButton;
+    RichEdit1: TRichEdit;
+    OpenCategoryFile: TOpenDialog;
+    SaveProtocol: TSaveDialog;
+    PrintReadyProtocol: TPrintDialog;
+    SaveResults: TButton;
+    PrintProrocol: TButton;
+    CompetitionMode: TPageControl;
+    TabSheet1: TTabSheet;
+    TabSheet2: TTabSheet;
     Panel1: TPanel;
     Panel2: TPanel;
     Panel3: TPanel;
     Panel4: TPanel;
-    RScoreI: TButton;
-    RFallI: TButton;
-    RPenaltyI: TButton;
-    BScoreI: TButton;
-    BFallI: TButton;
-    BPenaltyI: TButton;
     Panel5: TPanel;
-    start: TButton;
-    reset: TButton;
     Panel6: TPanel;
     Panel7: TPanel;
     Panel8: TPanel;
@@ -43,32 +40,35 @@ type
     Panel11: TPanel;
     Panel12: TPanel;
     Panel13: TPanel;
-    RScoreDec: TButton;
-    RFallDec: TButton;
-    RPenaltyDec: TButton;
-    BScoreDec: TButton;
-    BFallDec: TButton;
-    BPenaltyDec: TButton;
-    OpenCategory: TButton;
-    RichEdit1: TRichEdit;
-    OpenCategoryFile: TOpenDialog;
-    SaveProtocol: TSaveDialog;
-    PrintReadyProtocol: TPrintDialog;
-    SaveResults: TButton;
-    PrintProrocol: TButton;
+    Label1: TLabel;
+    Start: TBitBtn;
+    Stop: TBitBtn;
+    Reset: TBitBtn;
+    RScoreInc: TBitBtn;
+    RScoreDec: TBitBtn;
+    RFallDec: TBitBtn;
+    RFallInc: TBitBtn;
+    RPenaltyDec: TBitBtn;
+    RPenaltyInc: TBitBtn;
+    BScoreDec: TBitBtn;
+    BScoreInc: TBitBtn;
+    BFallInc: TBitBtn;
+    BFallDec: TBitBtn;
+    BPenaltyInc: TBitBtn;
+    BPenaltyDec: TBitBtn;
     procedure N2Click(Sender: TObject);
     procedure N3Click(Sender: TObject);
     procedure N4Click(Sender: TObject);
     procedure N5Click(Sender: TObject);
-    procedure startClick(Sender: TObject);
-    procedure resetClick(Sender: TObject);
+    procedure StartClick(Sender: TObject);
+    procedure ResetClick(Sender: TObject);
     procedure Timer1Timer(Sender: TObject);
-    procedure RScoreIClick(Sender: TObject);
-    procedure BScoreIClick(Sender: TObject);
-    procedure RFallIClick(Sender: TObject);
-    procedure BFallIClick(Sender: TObject);
-    procedure RPenaltyIClick(Sender: TObject);
-    procedure BPenaltyIClick(Sender: TObject);
+    procedure RScoreIncClick(Sender: TObject);
+    procedure BScoreIncClick(Sender: TObject);
+    procedure RFallIncClick(Sender: TObject);
+    procedure BFallIncClick(Sender: TObject);
+    procedure RPenaltyIncClick(Sender: TObject);
+    procedure BPenaltyIncClick(Sender: TObject);
     procedure RScoreDecClick(Sender: TObject);
     procedure BScoreDecClick(Sender: TObject);
     procedure RFallDecClick(Sender: TObject);
@@ -118,20 +118,20 @@ begin
 form8.visible:=true;
 end;
 
-procedure TForm5.startClick(Sender: TObject);
+procedure TForm5.StartClick(Sender: TObject);
 begin
 if Timer1.Enabled
 then
 begin
 Timer1.Enabled:=False;
-start.Caption:='Старт';
-reset.Enabled:=True;
-RScoreI.Enabled:=false;
-BScoreI.Enabled:=false;
-RFallI.Enabled:=false;
-BFallI.Enabled:=false;
-RPenaltyI.Enabled:=false;
-BPenaltyI.Enabled:=false;
+Start.Caption:='Старт';
+Reset.Enabled:=True;
+RScoreInc.Enabled:=false;
+BScoreInc.Enabled:=false;
+RFallInc.Enabled:=false;
+BFallInc.Enabled:=false;
+RPenaltyInc.Enabled:=false;
+BPenaltyInc.Enabled:=false;
 
 RScoreDec.Enabled:=false;
 BScoreDec.Enabled:=false;
@@ -143,14 +143,16 @@ end
 else
 begin
 Timer1.Enabled:=True;
-start.Caption:='Стоп';
-reset.Enabled:=False;
-RScoreI.Enabled:=true;
-BScoreI.Enabled:=true;
-RFallI.Enabled:=true;
-BFallI.Enabled:=true;
-RPenaltyI.Enabled:=true;
-BPenaltyI.Enabled:=true;
+Start.Visible:=false;
+Stop.Visible:=true;
+//start.Caption:='Стоп';
+Reset.Enabled:=False;
+RScoreInc.Enabled:=true;
+BScoreInc.Enabled:=true;
+RFallInc.Enabled:=true;
+BFallInc.Enabled:=true;
+RPenaltyInc.Enabled:=true;
+BPenaltyInc.Enabled:=true;
 
 RScoreDec.Enabled:=true;
 BScoreDec.Enabled:=true;
@@ -161,7 +163,7 @@ BPenaltyDec.Enabled:=true;
 end;
 end;
 
-procedure TForm5.resetClick(Sender: TObject);
+procedure TForm5.ResetClick(Sender: TObject);
 begin
 sec:=0;
 min:=0;
@@ -171,15 +173,18 @@ redfall:=0;
 bluefall:=0;
 redpenalty:=0;
 bluepenalty:=0;
-Label8.Caption:='00:00';
-panel1.caption:='0';
+Label1.Caption:='00:00';
+panel5.caption:='0';
 panel2.caption:='0';
-panel6.caption:='0';
+panel7.caption:='0';
 panel9.caption:='0';
 panel11.caption:='0';
-panel12.caption:='0';
-reset.Enabled:=False;
-start.enabled:=true;
+panel13.caption:='0';
+Reset.Enabled:=False;
+Start.Visible:=true;
+Start.Enabled:=true;
+Stop.Visible:=false;
+//start.enabled:=true;
 Timer1.Enabled:=False;
 end;
 
@@ -200,57 +205,57 @@ else str:=IntToStr(min);
 if sec<10
 then str:=str+':0'+IntToStr(sec)
 else str:=str+':'+IntToStr(sec);
-Label8.Caption:=str;
+Label1.Caption:=str;
 end;
 
-procedure TForm5.RScoreIClick(Sender: TObject);
+procedure TForm5.RScoreIncClick(Sender: TObject);
 begin
 inc(redscore);
-panel1.Caption:= IntToStr(redscore);
+panel7.Caption:= IntToStr(redscore);
 end;
 
-procedure TForm5.BScoreIClick(Sender: TObject);
+procedure TForm5.BScoreIncClick(Sender: TObject);
 begin
 inc(bluescore);
-panel2.Caption:= IntToStr(bluescore);
+panel13.Caption:= IntToStr(bluescore);
 end;
 
-procedure TForm5.RFallIClick(Sender: TObject);
+procedure TForm5.RFallIncClick(Sender: TObject);
 begin
 inc(redfall);
 if redfall mod 3 = 0 then redscore:=redscore-1;
-panel1.caption:= IntToStr(redscore);
-panel6.Caption:= IntToStr(redfall);
+panel7.caption:= IntToStr(redscore);
+panel5.Caption:= IntToStr(redfall);
 end;
 
-procedure TForm5.BFallIClick(Sender: TObject);
+procedure TForm5.BFallIncClick(Sender: TObject);
 begin
 inc(bluefall);
 if bluefall mod 3 = 0 then bluescore:=bluescore-1;
-panel2.caption:= IntToStr(bluescore);
+panel13.caption:= IntToStr(bluescore);
 panel11.Caption:= IntToStr(bluefall);
 end;
 
-procedure TForm5.RPenaltyIClick(Sender: TObject);
+procedure TForm5.RPenaltyIncClick(Sender: TObject);
 begin
 inc(redpenalty);
 dec(redscore);
-panel1.caption:= IntToStr(redscore);
-panel9.Caption:= IntToStr(redpenalty);
+panel7.caption:= IntToStr(redscore);
+panel2.Caption:= IntToStr(redpenalty);
 if redpenalty = 3
 then
 begin
 showmessage('Красный спортсмен дисквалифицирован!');
 Timer1.Enabled:=False;
-start.Caption:='Старт';
-reset.Enabled:=True;
-start.enabled:=false;
-RScoreI.Enabled:=false;
-BScoreI.Enabled:=false;
-RFallI.Enabled:=false;
-BFallI.Enabled:=false;
-RPenaltyI.Enabled:=false;
-BPenaltyI.Enabled:=false;
+Start.Caption:='Старт';
+Reset.Enabled:=True;
+Start.enabled:=false;
+RScoreInc.Enabled:=false;
+BScoreInc.Enabled:=false;
+RFallInc.Enabled:=false;
+BFallInc.Enabled:=false;
+RPenaltyInc.Enabled:=false;
+BPenaltyInc.Enabled:=false;
 
 RScoreDec.Enabled:=false;
 BScoreDec.Enabled:=false;
@@ -261,26 +266,26 @@ BPenaltyDec.Enabled:=false;
 end;
 end;
 
-procedure TForm5.BPenaltyIClick(Sender: TObject);
+procedure TForm5.BPenaltyIncClick(Sender: TObject);
 begin
 inc(bluepenalty);
 dec(bluescore);
-panel2.caption:= IntToStr(bluescore);
-panel12.Caption:= IntToStr(bluepenalty);
+panel13.caption:= IntToStr(bluescore);
+panel9.Caption:= IntToStr(bluepenalty);
 if bluepenalty = 3
 then
 begin
 showmessage('Синий спортсмен дисквалифицирован!');
 Timer1.Enabled:=False;
-start.Caption:='Старт';
-reset.Enabled:=True;
-start.enabled:=false;
-RScoreI.Enabled:=false;
-BScoreI.Enabled:=false;
-RFallI.Enabled:=false;
-BFallI.Enabled:=false;
-RPenaltyI.Enabled:=false;
-BPenaltyI.Enabled:=false;
+Start.Caption:='Старт';
+Reset.Enabled:=True;
+Start.enabled:=false;
+RScoreInc.Enabled:=false;
+BScoreInc.Enabled:=false;
+RFallInc.Enabled:=false;
+BFallInc.Enabled:=false;
+RPenaltyInc.Enabled:=false;
+BPenaltyInc.Enabled:=false;
 
 RScoreDec.Enabled:=false;
 BScoreDec.Enabled:=false;
@@ -294,28 +299,28 @@ end;
 procedure TForm5.RScoreDecClick(Sender: TObject);
 begin
 dec(redscore);
-panel1.Caption:= IntToStr(redscore);
+panel7.Caption:= IntToStr(redscore);
 end;
 
 procedure TForm5.BScoreDecClick(Sender: TObject);
 begin
 dec(bluescore);
-panel2.Caption:= IntToStr(bluescore);
+panel13.Caption:= IntToStr(bluescore);
 end;
 
 procedure TForm5.RFallDecClick(Sender: TObject);
 begin
 dec(redfall);
 if (redfall  = 2) or (redfall  = 5) or (redfall  = 8) or (redfall  = 11) or (redfall  = 14) or (redfall  = 17)  or (redfall = 20) then redscore:=redscore+1;
-panel1.caption:= IntToStr(redscore);
-panel6.Caption:= IntToStr(redfall);
+panel7.caption:= IntToStr(redscore);
+panel5.Caption:= IntToStr(redfall);
 end;
 
 procedure TForm5.BFallDecClick(Sender: TObject);
 begin
 dec(bluefall);
 if (bluefall  = 2) or (bluefall  = 5) or (bluefall  = 8) or (bluefall  = 11) or (bluefall  = 14) or (bluefall  = 17)  or (bluefall = 20) then bluescore:=bluescore+1;
-panel2.caption:= IntToStr(bluescore);
+panel13.caption:= IntToStr(bluescore);
 panel11.Caption:= IntToStr(bluefall);
 end;
 
@@ -323,16 +328,16 @@ procedure TForm5.RPenaltyDecClick(Sender: TObject);
 begin
 dec(redpenalty);
 inc(redscore);
-panel1.caption:= IntToStr(redscore);
-panel9.Caption:= IntToStr(redpenalty);
+panel7.caption:= IntToStr(redscore);
+panel2.Caption:= IntToStr(redpenalty);
 end;
 
 procedure TForm5.BPenaltyDecClick(Sender: TObject);
 begin
 dec(bluepenalty);
 inc(bluescore);
-panel2.caption:= IntToStr(bluescore);
-panel12.Caption:= IntToStr(bluepenalty);
+panel13.caption:= IntToStr(bluescore);
+panel9.Caption:= IntToStr(bluepenalty);
 end;
 
 procedure TForm5.OpenCategoryClick(Sender: TObject);
