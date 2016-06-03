@@ -77,6 +77,7 @@ type
     Confirm: TBitBtn;
     Panel18: TPanel;
     Pause: TBitBtn;
+    Clear: TBitBtn;
     procedure N2Click(Sender: TObject);
     procedure N3Click(Sender: TObject);
     procedure N4Click(Sender: TObject);
@@ -101,6 +102,7 @@ type
     procedure PrintProrocolClick(Sender: TObject);
     procedure ConfirmClick(Sender: TObject);
     procedure PauseClick(Sender: TObject);
+    procedure ClearClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -142,31 +144,10 @@ type
   procedure TForm5.StartClick(Sender: TObject);
   begin
     if Timer1.Enabled = false then
-    {begin
-      Timer1.Enabled:=False;
-      //Start.Caption:='Старт';
-      Reset.Enabled:=True;
-      RScoreInc.Enabled:=false;
-      BScoreInc.Enabled:=false;
-      RFallInc.Enabled:=false;
-      BFallInc.Enabled:=false;
-      RPenaltyInc.Enabled:=false;
-      BPenaltyInc.Enabled:=false;
-
-      RScoreDec.Enabled:=false;
-      BScoreDec.Enabled:=false;
-      RFallDec.Enabled:=false;
-      BFallDec.Enabled:=false;
-      RPenaltyDec.Enabled:=false;
-      BPenaltyDec.Enabled:=false;
-    end
-    else }
     begin
       Timer1.Enabled:=True;
-      //
       Start.Visible:=false;
       Pause.Visible:=true;
-      //Start.Caption:='Стоп';
       Reset.Enabled:=False;
       RScoreInc.Enabled:=true;
       BScoreInc.Enabled:=true;
@@ -203,8 +184,6 @@ type
     panel13.caption:='0';
     Reset.Enabled:=False;
     Start.Enabled:=true;
-    //Stop.Visible:=false;
-    //start.enabled:=true;
     Timer1.Enabled:=False;
     end;
 
@@ -262,7 +241,8 @@ type
     begin
       showmessage('Красный спортсмен дисквалифицирован!');
       Timer1.Enabled:=False;
-      Start.Caption:='Старт';
+      Pause.Visible:=false;
+      Start.Visible:=true;
       Reset.Enabled:=True;
       Start.Enabled:=false;
       RScoreInc.Enabled:=false;
@@ -291,7 +271,8 @@ type
     begin
       Showmessage('Синий спортсмен дисквалифицирован!');
       Timer1.Enabled:=False;
-      Start.Caption:='Старт';
+      Pause.Visible:=false;
+      Start.Visible:=true;
       Reset.Enabled:=True;
       Start.enabled:=false;
       RScoreInc.Enabled:=false;
@@ -374,12 +355,22 @@ type
   end;
 
   procedure TForm5.ConfirmClick(Sender: TObject);
-  Var RedScore, BlueScore : integer;
+  Var RTech,BTech,RConc,BConc,REx,BEx,RRhthm,BRhthm,RBal,BBal,RTotal,BTotal : integer;
   begin
-    RedScore:=StrToInt(RTechScore.Items[RTechScore.ItemIndex]+ RConcentration.Items[RConcentration.ItemIndex]+ RExhalation.Items[RExhalation.ItemIndex]+ RRhythm.Items[RRhythm.ItemIndex]+ RBalance.Items[RBalance.ItemIndex]);
-    BlueScore:=StrToInt(BTechScore.Items[BTechScore.ItemIndex]+ BConcentration.Items[BConcentration.ItemIndex]+ BExhalation.Items[BExhalation.ItemIndex]+ BRhythm.Items[BRhythm.ItemIndex]+ BBalance.Items[RBalance.ItemIndex]);
-    Panel15.Caption:=IntToStr(RedScore);
-    Panel17.Caption:=IntToStr(BlueScore);
+    RTech:=RTechScore.ItemIndex;
+    BTech:=BTechScore.ItemIndex;
+    RConc:=RConcentration.ItemIndex;
+    BConc:=BConcentration.ItemIndex;
+    REx:=RExhalation.ItemIndex;
+    BEx:=BExhalation.ItemIndex;
+    RRhthm:=RRhythm.ItemIndex;
+    BRhthm:=BRhythm.ItemIndex;
+    RBal:=RBalance.ItemIndex;
+    BBal:=BBalance.ItemIndex;
+    RTotal:=RTech+RConc+REx+RRhthm+RBal;
+    BTotal:=BTech+BConc+BEx+BRhthm+BBal;
+    Panel15.Caption:=IntToStr(RTotal);
+    Panel17.Caption:=IntToStr(BTotal);
   end;
 
   procedure TForm5.PauseClick(Sender: TObject);
@@ -387,7 +378,6 @@ begin
   if Timer1.Enabled  then
     begin
       Timer1.Enabled:=False;
-      //Start.Caption:='Старт';
       Reset.Enabled:=True;
       RScoreInc.Enabled:=false;
       BScoreInc.Enabled:=false;
@@ -406,6 +396,22 @@ begin
       Pause.Visible:=false;
       Start.Visible:=true;
     end;
+  end;
+
+  procedure TForm5.ClearClick(Sender: TObject);
+  begin
+  Panel15.Caption:='0';
+  Panel17.Caption:='0';
+  RTechScore.ItemIndex:=-1;
+  BTechScore.ItemIndex:=-1;
+  RConcentration.ItemIndex:=-1;
+  BConcentration.ItemIndex:=-1;
+  RExhalation.ItemIndex:=-1;
+  BExhalation.ItemIndex:=-1;
+  RRhythm.ItemIndex:=-1;
+  BRhythm.ItemIndex:=-1;
+  RBalance.ItemIndex:=-1;  
+  BBalance.ItemIndex:=-1;
   end;
 
 end.

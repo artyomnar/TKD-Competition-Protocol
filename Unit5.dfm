@@ -82,7 +82,7 @@ object Form5: TForm5
     Top = 24
     Width = 593
     Height = 457
-    ActivePage = TabSheet2
+    ActivePage = TabSheet1
     Font.Charset = RUSSIAN_CHARSET
     Font.Color = clWindowText
     Font.Height = -13
@@ -689,9 +689,9 @@ object Form5: TForm5
         TabOrder = 0
       end
       object Panel15: TPanel
-        Left = 80
+        Left = 176
         Top = 40
-        Width = 169
+        Width = 73
         Height = 65
         Caption = '0'
         Font.Charset = RUSSIAN_CHARSET
@@ -720,7 +720,7 @@ object Form5: TForm5
       object Panel17: TPanel
         Left = 336
         Top = 40
-        Width = 169
+        Width = 73
         Height = 65
         Caption = '0'
         Font.Charset = RUSSIAN_CHARSET
@@ -740,7 +740,6 @@ object Form5: TForm5
         ItemHeight = 15
         TabOrder = 4
         Items.Strings = (
-          '0'
           '1'
           '2'
           '3'
@@ -752,10 +751,10 @@ object Form5: TForm5
         Top = 152
         Width = 73
         Height = 23
+        Style = csDropDownList
         ItemHeight = 15
         TabOrder = 5
         Items.Strings = (
-          '0'
           '1'
           '2'
           '3'
@@ -771,7 +770,6 @@ object Form5: TForm5
         ItemHeight = 15
         TabOrder = 6
         Items.Strings = (
-          '0'
           '1'
           '2'
           '3'
@@ -783,10 +781,10 @@ object Form5: TForm5
         Top = 192
         Width = 73
         Height = 23
+        Style = csDropDownList
         ItemHeight = 15
         TabOrder = 7
         Items.Strings = (
-          '0'
           '1'
           '2'
           '3'
@@ -802,7 +800,6 @@ object Form5: TForm5
         ItemHeight = 15
         TabOrder = 8
         Items.Strings = (
-          '0'
           '1'
           '2'
           '3'
@@ -814,10 +811,10 @@ object Form5: TForm5
         Top = 272
         Width = 73
         Height = 23
+        Style = csDropDownList
         ItemHeight = 15
         TabOrder = 9
         Items.Strings = (
-          '0'
           '1'
           '2'
           '3'
@@ -833,7 +830,6 @@ object Form5: TForm5
         ItemHeight = 15
         TabOrder = 10
         Items.Strings = (
-          '0'
           '1'
           '2'
           '3'
@@ -845,10 +841,10 @@ object Form5: TForm5
         Top = 232
         Width = 73
         Height = 23
+        Style = csDropDownList
         ItemHeight = 15
         TabOrder = 11
         Items.Strings = (
-          '0'
           '1'
           '2'
           '3'
@@ -864,7 +860,6 @@ object Form5: TForm5
         ItemHeight = 15
         TabOrder = 12
         Items.Strings = (
-          '0'
           '1'
           '2'
           '3'
@@ -876,10 +871,10 @@ object Form5: TForm5
         Top = 312
         Width = 73
         Height = 23
+        Style = csDropDownList
         ItemHeight = 15
         TabOrder = 13
         Items.Strings = (
-          '0'
           '1'
           '2'
           '3'
@@ -887,7 +882,7 @@ object Form5: TForm5
           '5')
       end
       object Confirm: TBitBtn
-        Left = 235
+        Left = 179
         Top = 360
         Width = 113
         Height = 41
@@ -904,6 +899,16 @@ object Form5: TForm5
         Caption = #1054#1094#1077#1085#1080#1090#1077' '#1090#1091#1083#1100' '#1087#1086' '#1091#1082#1072#1079#1072#1085#1085#1099#1084' '#1085#1080#1078#1077' '#1082#1088#1080#1090#1077#1088#1080#1103#1084' '#1074' '#1073#1072#1083#1083#1072#1093
         Color = clMoneyGreen
         TabOrder = 15
+      end
+      object Clear: TBitBtn
+        Left = 304
+        Top = 360
+        Width = 113
+        Height = 41
+        Caption = #1054#1095#1080#1089#1090#1080#1090#1100
+        TabOrder = 16
+        OnClick = ClearClick
+        Kind = bkCancel
       end
     end
   end
