@@ -1,6 +1,6 @@
 object Form5: TForm5
-  Left = 64
-  Top = 121
+  Left = 27
+  Top = 129
   Width = 1212
   Height = 567
   Caption = #1057#1086#1088#1077#1074#1085#1086#1074#1072#1090#1077#1083#1100#1085#1099#1081' '#1088#1077#1078#1080#1084
@@ -82,7 +82,7 @@ object Form5: TForm5
     Top = 24
     Width = 593
     Height = 457
-    ActivePage = TabSheet1
+    ActivePage = TabSheet2
     Font.Charset = RUSSIAN_CHARSET
     Font.Color = clWindowText
     Font.Height = -13
@@ -126,7 +126,7 @@ object Form5: TForm5
         Width = 65
         Height = 49
         Caption = '0'
-        Color = clWhite
+        Color = clMenu
         Font.Charset = RUSSIAN_CHARSET
         Font.Color = clRed
         Font.Height = -27
@@ -141,6 +141,7 @@ object Form5: TForm5
         Width = 121
         Height = 25
         Caption = #1042#1088#1077#1084#1103
+        Color = clMoneyGreen
         Font.Charset = RUSSIAN_CHARSET
         Font.Color = clWindowText
         Font.Height = -16
@@ -170,7 +171,7 @@ object Form5: TForm5
         Width = 65
         Height = 49
         Caption = '0'
-        Color = clWhite
+        Color = clMenu
         Font.Charset = RUSSIAN_CHARSET
         Font.Color = clRed
         Font.Height = -27
@@ -200,7 +201,7 @@ object Form5: TForm5
         Width = 65
         Height = 65
         Caption = '0'
-        Color = clWhite
+        Color = clMenu
         Font.Charset = RUSSIAN_CHARSET
         Font.Color = clRed
         Font.Height = -48
@@ -230,7 +231,7 @@ object Form5: TForm5
         Width = 65
         Height = 49
         Caption = '0'
-        Color = clWhite
+        Color = clMenu
         Font.Charset = RUSSIAN_CHARSET
         Font.Color = clBlue
         Font.Height = -27
@@ -260,7 +261,7 @@ object Form5: TForm5
         Width = 65
         Height = 49
         Caption = '0'
-        Color = clWhite
+        Color = clMenu
         Font.Charset = RUSSIAN_CHARSET
         Font.Color = clBlue
         Font.Height = -27
@@ -290,7 +291,7 @@ object Form5: TForm5
         Width = 65
         Height = 65
         Caption = '0'
-        Color = clWhite
+        Color = clMenu
         Font.Charset = RUSSIAN_CHARSET
         Font.Color = clBlue
         Font.Height = -48
@@ -336,42 +337,6 @@ object Form5: TForm5
           FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF}
         Spacing = 10
       end
-      object Stop: TBitBtn
-        Left = 184
-        Top = 104
-        Width = 97
-        Height = 33
-        Caption = #1055#1072#1091#1079#1072
-        TabOrder = 14
-        Visible = False
-        Glyph.Data = {
-          36030000424D3603000000000000360000002800000010000000100000000100
-          1800000000000003000000000000000000000000000000000000FFFFFFFFFFFF
-          FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
-          FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFCC483FCC483FCC483FCC483FCC483FFF
-          FFFFFFFFFFCC483FCC483FCC483FCC483FCC483FFFFFFFFFFFFFFFFFFFFFFFFF
-          CC483FCC483FCC483FCC483FCC483FFFFFFFFFFFFFCC483FCC483FCC483FCC48
-          3FCC483FFFFFFFFFFFFFFFFFFFFFFFFFCC483FCC483FCC483FCC483FCC483FFF
-          FFFFFFFFFFCC483FCC483FCC483FCC483FCC483FFFFFFFFFFFFFFFFFFFFFFFFF
-          CC483FCC483FCC483FCC483FCC483FFFFFFFFFFFFFCC483FCC483FCC483FCC48
-          3FCC483FFFFFFFFFFFFFFFFFFFFFFFFFCC483FCC483FCC483FCC483FCC483FFF
-          FFFFFFFFFFCC483FCC483FCC483FCC483FCC483FFFFFFFFFFFFFFFFFFFFFFFFF
-          CC483FCC483FCC483FCC483FCC483FFFFFFFFFFFFFCC483FCC483FCC483FCC48
-          3FCC483FFFFFFFFFFFFFFFFFFFFFFFFFCC483FCC483FCC483FCC483FCC483FFF
-          FFFFFFFFFFCC483FCC483FCC483FCC483FCC483FFFFFFFFFFFFFFFFFFFFFFFFF
-          CC483FCC483FCC483FCC483FCC483FFFFFFFFFFFFFCC483FCC483FCC483FCC48
-          3FCC483FFFFFFFFFFFFFFFFFFFFFFFFFCC483FCC483FCC483FCC483FCC483FFF
-          FFFFFFFFFFCC483FCC483FCC483FCC483FCC483FFFFFFFFFFFFFFFFFFFFFFFFF
-          CC483FCC483FCC483FCC483FCC483FFFFFFFFFFFFFCC483FCC483FCC483FCC48
-          3FCC483FFFFFFFFFFFFFFFFFFFFFFFFFCC483FCC483FCC483FCC483FCC483FFF
-          FFFFFFFFFFCC483FCC483FCC483FCC483FCC483FFFFFFFFFFFFFFFFFFFFFFFFF
-          CC483FCC483FCC483FCC483FCC483FFFFFFFFFFFFFCC483FCC483FCC483FCC48
-          3FCC483FFFFFFFFFFFFFFFFFFFFFFFFFCC483FCC483FCC483FCC483FCC483FFF
-          FFFFFFFFFFCC483FCC483FCC483FCC483FCC483FFFFFFFFFFFFFFFFFFFFFFFFF
-          CC483FCC483FCC483FCC483FCC483FFFFFFFFFFFFFCC483FCC483FCC483FCC48
-          3FCC483FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
-          FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF}
-      end
       object Reset: TBitBtn
         Left = 304
         Top = 104
@@ -379,7 +344,8 @@ object Form5: TForm5
         Height = 33
         Caption = #1057#1073#1088#1086#1089
         Enabled = False
-        TabOrder = 15
+        TabOrder = 14
+        OnClick = ResetClick
         Glyph.Data = {
           36030000424D3603000000000000360000002800000010000000100000000100
           1800000000000003000000000000000000000000000000000000FFFFFFFFFFFF
@@ -421,7 +387,7 @@ object Form5: TForm5
         Font.Name = 'Times New Roman'
         Font.Style = [fsBold]
         ParentFont = False
-        TabOrder = 16
+        TabOrder = 15
         OnClick = RScoreIncClick
       end
       object RScoreDec: TBitBtn
@@ -437,7 +403,8 @@ object Form5: TForm5
         Font.Name = 'Times New Roman'
         Font.Style = [fsBold]
         ParentFont = False
-        TabOrder = 17
+        TabOrder = 16
+        OnClick = RScoreDecClick
       end
       object RFallDec: TBitBtn
         Left = 152
@@ -452,7 +419,8 @@ object Form5: TForm5
         Font.Name = 'Times New Roman'
         Font.Style = [fsBold]
         ParentFont = False
-        TabOrder = 18
+        TabOrder = 17
+        OnClick = RFallDecClick
       end
       object RFallInc: TBitBtn
         Left = 168
@@ -467,7 +435,8 @@ object Form5: TForm5
         Font.Name = 'Times New Roman'
         Font.Style = [fsBold]
         ParentFont = False
-        TabOrder = 19
+        TabOrder = 18
+        OnClick = RFallIncClick
       end
       object RPenaltyDec: TBitBtn
         Left = 152
@@ -482,7 +451,8 @@ object Form5: TForm5
         Font.Name = 'Times New Roman'
         Font.Style = [fsBold]
         ParentFont = False
-        TabOrder = 20
+        TabOrder = 19
+        OnClick = RPenaltyDecClick
       end
       object RPenaltyInc: TBitBtn
         Left = 168
@@ -497,7 +467,8 @@ object Form5: TForm5
         Font.Name = 'Times New Roman'
         Font.Style = [fsBold]
         ParentFont = False
-        TabOrder = 21
+        TabOrder = 20
+        OnClick = RPenaltyIncClick
       end
       object BScoreDec: TBitBtn
         Left = 416
@@ -512,7 +483,8 @@ object Form5: TForm5
         Font.Name = 'Times New Roman'
         Font.Style = [fsBold]
         ParentFont = False
-        TabOrder = 22
+        TabOrder = 21
+        OnClick = BScoreDecClick
       end
       object BScoreInc: TBitBtn
         Left = 320
@@ -527,7 +499,8 @@ object Form5: TForm5
         Font.Name = 'Times New Roman'
         Font.Style = [fsBold]
         ParentFont = False
-        TabOrder = 23
+        TabOrder = 22
+        OnClick = BScoreIncClick
       end
       object BFallInc: TBitBtn
         Left = 320
@@ -542,7 +515,8 @@ object Form5: TForm5
         Font.Name = 'Times New Roman'
         Font.Style = [fsBold]
         ParentFont = False
-        TabOrder = 24
+        TabOrder = 23
+        OnClick = BFallIncClick
       end
       object BFallDec: TBitBtn
         Left = 416
@@ -557,7 +531,8 @@ object Form5: TForm5
         Font.Name = 'Times New Roman'
         Font.Style = [fsBold]
         ParentFont = False
-        TabOrder = 25
+        TabOrder = 24
+        OnClick = BFallDecClick
       end
       object BPenaltyInc: TBitBtn
         Left = 320
@@ -572,7 +547,8 @@ object Form5: TForm5
         Font.Name = 'Times New Roman'
         Font.Style = [fsBold]
         ParentFont = False
-        TabOrder = 26
+        TabOrder = 25
+        OnClick = BPenaltyIncClick
       end
       object BPenaltyDec: TBitBtn
         Left = 416
@@ -587,12 +563,348 @@ object Form5: TForm5
         Font.Name = 'Times New Roman'
         Font.Style = [fsBold]
         ParentFont = False
+        TabOrder = 26
+        OnClick = BPenaltyDecClick
+      end
+      object Pause: TBitBtn
+        Left = 184
+        Top = 104
+        Width = 97
+        Height = 33
+        Caption = #1055#1072#1091#1079#1072
         TabOrder = 27
+        Visible = False
+        OnClick = PauseClick
+        Glyph.Data = {
+          36030000424D3603000000000000360000002800000010000000100000000100
+          1800000000000003000000000000000000000000000000000000FFFFFFFFFFFF
+          FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+          FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFCC483FCC483FCC483FCC483FCC483FFF
+          FFFFFFFFFFCC483FCC483FCC483FCC483FCC483FFFFFFFFFFFFFFFFFFFFFFFFF
+          CC483FCC483FCC483FCC483FCC483FFFFFFFFFFFFFCC483FCC483FCC483FCC48
+          3FCC483FFFFFFFFFFFFFFFFFFFFFFFFFCC483FCC483FCC483FCC483FCC483FFF
+          FFFFFFFFFFCC483FCC483FCC483FCC483FCC483FFFFFFFFFFFFFFFFFFFFFFFFF
+          CC483FCC483FCC483FCC483FCC483FFFFFFFFFFFFFCC483FCC483FCC483FCC48
+          3FCC483FFFFFFFFFFFFFFFFFFFFFFFFFCC483FCC483FCC483FCC483FCC483FFF
+          FFFFFFFFFFCC483FCC483FCC483FCC483FCC483FFFFFFFFFFFFFFFFFFFFFFFFF
+          CC483FCC483FCC483FCC483FCC483FFFFFFFFFFFFFCC483FCC483FCC483FCC48
+          3FCC483FFFFFFFFFFFFFFFFFFFFFFFFFCC483FCC483FCC483FCC483FCC483FFF
+          FFFFFFFFFFCC483FCC483FCC483FCC483FCC483FFFFFFFFFFFFFFFFFFFFFFFFF
+          CC483FCC483FCC483FCC483FCC483FFFFFFFFFFFFFCC483FCC483FCC483FCC48
+          3FCC483FFFFFFFFFFFFFFFFFFFFFFFFFCC483FCC483FCC483FCC483FCC483FFF
+          FFFFFFFFFFCC483FCC483FCC483FCC483FCC483FFFFFFFFFFFFFFFFFFFFFFFFF
+          CC483FCC483FCC483FCC483FCC483FFFFFFFFFFFFFCC483FCC483FCC483FCC48
+          3FCC483FFFFFFFFFFFFFFFFFFFFFFFFFCC483FCC483FCC483FCC483FCC483FFF
+          FFFFFFFFFFCC483FCC483FCC483FCC483FCC483FFFFFFFFFFFFFFFFFFFFFFFFF
+          CC483FCC483FCC483FCC483FCC483FFFFFFFFFFFFFCC483FCC483FCC483FCC48
+          3FCC483FFFFFFFFFFFFFFFFFFFFFFFFFCC483FCC483FCC483FCC483FCC483FFF
+          FFFFFFFFFFCC483FCC483FCC483FCC483FCC483FFFFFFFFFFFFFFFFFFFFFFFFF
+          CC483FCC483FCC483FCC483FCC483FFFFFFFFFFFFFCC483FCC483FCC483FCC48
+          3FCC483FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+          FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF}
+        Spacing = 10
       end
     end
     object TabSheet2: TTabSheet
       Caption = #1058#1091#1083#1100
       ImageIndex = 1
+      object Label2: TLabel
+        Left = 256
+        Top = 152
+        Width = 73
+        Height = 22
+        Caption = #1058#1077#1093#1085#1080#1082#1072
+        Font.Charset = RUSSIAN_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -19
+        Font.Name = 'Times New Roman'
+        Font.Style = [fsBold]
+        ParentFont = False
+      end
+      object Label3: TLabel
+        Left = 229
+        Top = 192
+        Width = 126
+        Height = 22
+        Caption = #1050#1086#1085#1094#1077#1085#1090#1088#1072#1094#1080#1103
+        Font.Charset = RUSSIAN_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -19
+        Font.Name = 'Times New Roman'
+        Font.Style = [fsBold]
+        ParentFont = False
+      end
+      object Label4: TLabel
+        Left = 272
+        Top = 272
+        Width = 45
+        Height = 22
+        Caption = #1056#1080#1090#1084
+        Font.Charset = RUSSIAN_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -19
+        Font.Name = 'Times New Roman'
+        Font.Style = [fsBold]
+        ParentFont = False
+      end
+      object Label5: TLabel
+        Left = 264
+        Top = 232
+        Width = 57
+        Height = 22
+        Caption = #1042#1099#1076#1086#1093
+        Font.Charset = RUSSIAN_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -19
+        Font.Name = 'Times New Roman'
+        Font.Style = [fsBold]
+        ParentFont = False
+      end
+      object Label6: TLabel
+        Left = 264
+        Top = 312
+        Width = 64
+        Height = 22
+        Caption = #1041#1072#1083#1072#1085#1089
+        Font.Charset = RUSSIAN_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -19
+        Font.Name = 'Times New Roman'
+        Font.Style = [fsBold]
+        ParentFont = False
+      end
+      object Panel14: TPanel
+        Left = 176
+        Top = 16
+        Width = 73
+        Height = 25
+        Caption = #1050#1088#1072#1089#1085#1099#1081
+        Color = clRed
+        Font.Charset = RUSSIAN_CHARSET
+        Font.Color = clWhite
+        Font.Height = -16
+        Font.Name = 'Times New Roman'
+        Font.Style = [fsBold]
+        ParentFont = False
+        TabOrder = 0
+      end
+      object Panel15: TPanel
+        Left = 80
+        Top = 40
+        Width = 169
+        Height = 65
+        Caption = '0'
+        Font.Charset = RUSSIAN_CHARSET
+        Font.Color = clRed
+        Font.Height = -48
+        Font.Name = 'Times New Roman'
+        Font.Style = [fsBold]
+        ParentFont = False
+        TabOrder = 1
+      end
+      object Panel16: TPanel
+        Left = 336
+        Top = 16
+        Width = 73
+        Height = 25
+        Caption = #1057#1080#1085#1080#1081
+        Color = clBlue
+        Font.Charset = RUSSIAN_CHARSET
+        Font.Color = clWhite
+        Font.Height = -16
+        Font.Name = 'Times New Roman'
+        Font.Style = [fsBold]
+        ParentFont = False
+        TabOrder = 2
+      end
+      object Panel17: TPanel
+        Left = 336
+        Top = 40
+        Width = 169
+        Height = 65
+        Caption = '0'
+        Font.Charset = RUSSIAN_CHARSET
+        Font.Color = clBlue
+        Font.Height = -48
+        Font.Name = 'Times New Roman'
+        Font.Style = [fsBold]
+        ParentFont = False
+        TabOrder = 3
+      end
+      object RTechScore: TComboBox
+        Left = 152
+        Top = 152
+        Width = 73
+        Height = 23
+        Style = csDropDownList
+        ItemHeight = 15
+        TabOrder = 4
+        Items.Strings = (
+          '0'
+          '1'
+          '2'
+          '3'
+          '4'
+          '5')
+      end
+      object BTechScore: TComboBox
+        Left = 360
+        Top = 152
+        Width = 73
+        Height = 23
+        ItemHeight = 15
+        TabOrder = 5
+        Items.Strings = (
+          '0'
+          '1'
+          '2'
+          '3'
+          '4'
+          '5')
+      end
+      object RConcentration: TComboBox
+        Left = 152
+        Top = 192
+        Width = 73
+        Height = 23
+        Style = csDropDownList
+        ItemHeight = 15
+        TabOrder = 6
+        Items.Strings = (
+          '0'
+          '1'
+          '2'
+          '3'
+          '4'
+          '5')
+      end
+      object BConcentration: TComboBox
+        Left = 360
+        Top = 192
+        Width = 73
+        Height = 23
+        ItemHeight = 15
+        TabOrder = 7
+        Items.Strings = (
+          '0'
+          '1'
+          '2'
+          '3'
+          '4'
+          '5')
+      end
+      object RRhythm: TComboBox
+        Left = 152
+        Top = 272
+        Width = 73
+        Height = 23
+        Style = csDropDownList
+        ItemHeight = 15
+        TabOrder = 8
+        Items.Strings = (
+          '0'
+          '1'
+          '2'
+          '3'
+          '4'
+          '5')
+      end
+      object BRhythm: TComboBox
+        Left = 360
+        Top = 272
+        Width = 73
+        Height = 23
+        ItemHeight = 15
+        TabOrder = 9
+        Items.Strings = (
+          '0'
+          '1'
+          '2'
+          '3'
+          '4'
+          '5')
+      end
+      object RExhalation: TComboBox
+        Left = 152
+        Top = 232
+        Width = 73
+        Height = 23
+        Style = csDropDownList
+        ItemHeight = 15
+        TabOrder = 10
+        Items.Strings = (
+          '0'
+          '1'
+          '2'
+          '3'
+          '4'
+          '5')
+      end
+      object BExhalation: TComboBox
+        Left = 360
+        Top = 232
+        Width = 73
+        Height = 23
+        ItemHeight = 15
+        TabOrder = 11
+        Items.Strings = (
+          '0'
+          '1'
+          '2'
+          '3'
+          '4'
+          '5')
+      end
+      object RBalance: TComboBox
+        Left = 152
+        Top = 312
+        Width = 73
+        Height = 23
+        Style = csDropDownList
+        ItemHeight = 15
+        TabOrder = 12
+        Items.Strings = (
+          '0'
+          '1'
+          '2'
+          '3'
+          '4'
+          '5')
+      end
+      object BBalance: TComboBox
+        Left = 360
+        Top = 312
+        Width = 73
+        Height = 23
+        ItemHeight = 15
+        TabOrder = 13
+        Items.Strings = (
+          '0'
+          '1'
+          '2'
+          '3'
+          '4'
+          '5')
+      end
+      object Confirm: TBitBtn
+        Left = 235
+        Top = 360
+        Width = 113
+        Height = 41
+        Caption = #1055#1088#1080#1084#1077#1085#1080#1090#1100
+        TabOrder = 14
+        OnClick = ConfirmClick
+        Kind = bkOK
+      end
+      object Panel18: TPanel
+        Left = 136
+        Top = 105
+        Width = 313
+        Height = 41
+        Caption = #1054#1094#1077#1085#1080#1090#1077' '#1090#1091#1083#1100' '#1087#1086' '#1091#1082#1072#1079#1072#1085#1085#1099#1084' '#1085#1080#1078#1077' '#1082#1088#1080#1090#1077#1088#1080#1103#1084' '#1074' '#1073#1072#1083#1083#1072#1093
+        Color = clMoneyGreen
+        TabOrder = 15
+      end
     end
   end
   object Timer1: TTimer
