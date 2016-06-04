@@ -4,7 +4,7 @@ interface
 
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
-  Dialogs, Menus, ComCtrls, Grids, DBGrids, ExtCtrls, DBCtrls;
+  Dialogs, Menus, ComCtrls, Grids, DBGrids, ExtCtrls, DBCtrls, jpeg;
 
 type
   TForm2 = class(TForm)
@@ -28,6 +28,7 @@ type
     DBNavigator2: TDBNavigator;
     DBNavigator3: TDBNavigator;
     DBNavigator4: TDBNavigator;
+    Image1: TImage;
     procedure N2Click(Sender: TObject);
     procedure N3Click(Sender: TObject);
     procedure N4Click(Sender: TObject);

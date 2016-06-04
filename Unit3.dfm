@@ -2,7 +2,8 @@ object Form3: TForm3
   Left = 256
   Top = 48
   Width = 690
-  Height = 636
+  Height = 630
+  AutoSize = True
   Caption = #1055#1086#1083#1091#1095#1077#1085#1080#1077' '#1080#1085#1092#1086#1088#1084#1072#1094#1080#1080' '#1086#1073' '#1091#1095#1072#1089#1090#1085#1080#1082#1072#1093
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -17,7 +18,7 @@ object Form3: TForm3
   TextHeight = 13
   object GroupBox1: TGroupBox
     Left = 16
-    Top = 8
+    Top = 0
     Width = 641
     Height = 97
     Caption = #1054#1073#1097#1077#1077' '#1082#1086#1083#1080#1095#1077#1089#1090#1074#1086':  '
@@ -143,7 +144,7 @@ object Form3: TForm3
   end
   object StatusBar1: TStatusBar
     Left = 0
-    Top = 559
+    Top = 553
     Width = 674
     Height = 19
     Panels = <
@@ -154,7 +155,7 @@ object Form3: TForm3
   end
   object PageControl1: TPageControl
     Left = 16
-    Top = 104
+    Top = 96
     Width = 641
     Height = 449
     ActivePage = TabSheet1
