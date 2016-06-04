@@ -118,8 +118,5 @@ object Form1: TForm1
         OnClick = N5Click
       end
     end
-    object N2: TMenuItem
-      Caption = #1053#1072#1089#1090#1088#1086#1081#1082#1080
-    end
   end
 end

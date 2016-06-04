@@ -15,7 +15,6 @@ type
     MainMenu1: TMainMenu;
     StatusBar1: TStatusBar;
     N1: TMenuItem;
-    N2: TMenuItem;
     Label1: TLabel;
     N3: TMenuItem;
     N4: TMenuItem;

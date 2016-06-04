@@ -5,7 +5,7 @@ interface
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
   Dialogs, Grids, DBGrids, StdCtrls, Menus, ComCtrls, DBCtrls, jpeg,
-  ExtCtrls, ExtDlgs;
+  ExtCtrls, ExtDlgs, Buttons;
 
 type
   TForm4 = class(TForm)
@@ -30,7 +30,6 @@ type
     GenreList: TComboBox;
     AgeListDown: TComboBox;
     WeightList: TComboBox;
-    FindMassogiCategory: TButton;
     GroupBox1: TGroupBox;
     BeltList: TComboBox;
     Label10: TLabel;
@@ -45,9 +44,7 @@ type
     AgeListDownP: TComboBox;
     Label13: TLabel;
     AgeListUpP: TComboBox;
-    FindPatternCategory: TButton;
     GroupBox4: TGroupBox;
-    OpenTemplate: TButton;
     Label14: TLabel;
     DBText1: TDBText;
     Label15: TLabel;
@@ -55,18 +52,20 @@ type
     OpenDialog1: TOpenDialog;
     SaveDialog1: TSaveDialog;
     PrintDialog1: TPrintDialog;
-    SaveSortition: TButton;
-    PrintSortition: TButton;
+    SaveSortition: TBitBtn;
+    PrintSortition: TBitBtn;
+    FindMassogyCategory: TBitBtn;
+    FindPatternCategory: TBitBtn;
+    OpenTemplate: TBitBtn;
     procedure N2Click(Sender: TObject);
     procedure N3Click(Sender: TObject);
     procedure N4Click(Sender: TObject);
     procedure N5Click(Sender: TObject);
-    procedure FindMassogiCategoryClick(Sender: TObject);
-    procedure FindPatternCategoryClick(Sender: TObject);
-    procedure OpenTemplateClick(Sender: TObject);
     procedure SaveSortitionClick(Sender: TObject);
     procedure PrintSortitionClick(Sender: TObject);
-   // procedure PrintSortitionClick(Sender: TObject);
+    procedure FindMassogyCategoryClick(Sender: TObject);
+    procedure FindPatternCategoryClick(Sender: TObject);
+    procedure OpenTemplateClick(Sender: TObject);
 
   private
     { Private declarations }
@@ -104,8 +103,20 @@ begin
 form8.visible:=true;
 end;
 
-procedure TForm4.FindMassogiCategoryClick(Sender: TObject);
-  Var SGenre,SAgeUp,SAgeDown,Sweight:string;
+procedure TForm4.SaveSortitionClick(Sender: TObject);
+begin
+if SaveDialog1.Execute = true then
+RichEdit1.Lines.SaveToFile(SaveDialog1.FileName);
+end;
+
+procedure TForm4.PrintSortitionClick(Sender: TObject);
+begin
+if PrintDialog1.Execute = true then
+RichEdit1.Print(Form4.Caption);
+end;
+
+procedure TForm4.FindMassogyCategoryClick(Sender: TObject);
+ Var SGenre,SAgeUp,SAgeDown,Sweight:string;
   begin
     SGenre:=Unit4.Form4.GenreList.text;
     SWeight:=Unit4.Form4.WeightList.text;
@@ -198,10 +209,10 @@ procedure TForm4.FindMassogiCategoryClick(Sender: TObject);
       end;
       end;
     end;
-  end;
+end;
 
 procedure TForm4.FindPatternCategoryClick(Sender: TObject);
-  Var PGenre, PAgeDown, PAgeUp, Belt:String;
+Var PGenre, PAgeDown, PAgeUp, Belt:String;
   begin
     PGenre:=Unit4.Form4.GenreListPattern.text;
     PAgeDown:=Unit4.Form4.AgeListDownP.text;
@@ -425,18 +436,6 @@ begin
 RichEdit1.Visible:=true;
 if OpenDialog1.Execute = true then
 RichEdit1.Lines.LoadFromFile(OpenDialog1.FileName);
-end;
-
-procedure TForm4.SaveSortitionClick(Sender: TObject);
-begin
-if SaveDialog1.Execute = true then
-RichEdit1.Lines.SaveToFile(SaveDialog1.FileName);
-end;
-
-procedure TForm4.PrintSortitionClick(Sender: TObject);
-begin
-if PrintDialog1.Execute = true then
-RichEdit1.Print(Form4.Caption);
 end;
 
 end.

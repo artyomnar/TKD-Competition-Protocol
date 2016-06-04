@@ -1,6 +1,6 @@
 object Form3: TForm3
-  Left = 311
-  Top = 57
+  Left = 256
+  Top = 48
   Width = 690
   Height = 636
   Caption = #1055#1086#1083#1091#1095#1077#1085#1080#1077' '#1080#1085#1092#1086#1088#1084#1072#1094#1080#1080' '#1086#1073' '#1091#1095#1072#1089#1090#1085#1080#1082#1072#1093
@@ -195,22 +195,13 @@ object Form3: TForm3
         TitleFont.Name = 'Times New Roman'
         TitleFont.Style = [fsBold]
       end
-      object FindTeammates: TButton
-        Left = 296
-        Top = 160
-        Width = 91
-        Height = 25
-        Caption = #1055#1088#1080#1085#1103#1090#1100
-        TabOrder = 1
-        OnClick = FindTeammatesClick
-      end
       object GroupBox2: TGroupBox
         Left = 392
         Top = 8
         Width = 241
         Height = 177
         Caption = #1054#1090' '#1074#1099#1073#1088#1072#1085#1085#1086#1081' '#1082#1086#1084#1072#1085#1076#1099': '
-        TabOrder = 2
+        TabOrder = 1
         object Label11: TLabel
           Left = 16
           Top = 24
@@ -336,7 +327,7 @@ object Form3: TForm3
         Top = 160
         Width = 161
         Height = 23
-        TabOrder = 3
+        TabOrder = 2
       end
       object PageControl2: TPageControl
         Left = 0
@@ -344,7 +335,7 @@ object Form3: TForm3
         Width = 633
         Height = 241
         ActivePage = TabSheet4
-        TabOrder = 4
+        TabOrder = 3
         Visible = False
         object TabSheet2: TTabSheet
           Caption = #1057#1087#1086#1088#1090#1089#1084#1077#1085#1099
@@ -399,6 +390,16 @@ object Form3: TForm3
             TitleFont.Style = [fsBold]
           end
         end
+      end
+      object FindTeammates: TBitBtn
+        Left = 288
+        Top = 160
+        Width = 105
+        Height = 25
+        Caption = #1055#1088#1080#1085#1103#1090#1100
+        TabOrder = 4
+        OnClick = FindTeammatesClick
+        Kind = bkOK
       end
     end
   end

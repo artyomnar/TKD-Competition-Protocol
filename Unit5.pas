@@ -17,13 +17,10 @@ type
     N4: TMenuItem;
     N5: TMenuItem;
     N2: TMenuItem;
-    OpenCategory: TButton;
     RichEdit1: TRichEdit;
     OpenCategoryFile: TOpenDialog;
     SaveProtocol: TSaveDialog;
     PrintReadyProtocol: TPrintDialog;
-    SaveResults: TButton;
-    PrintProrocol: TButton;
     CompetitionMode: TPageControl;
     TabSheet1: TTabSheet;
     TabSheet2: TTabSheet;
@@ -78,6 +75,9 @@ type
     Panel18: TPanel;
     Pause: TBitBtn;
     Clear: TBitBtn;
+    OpenCategory: TBitBtn;
+    SaveResults: TBitBtn;
+    PrintProtocol: TBitBtn;
     procedure N2Click(Sender: TObject);
     procedure N3Click(Sender: TObject);
     procedure N4Click(Sender: TObject);
@@ -97,12 +97,12 @@ type
     procedure BFallDecClick(Sender: TObject);
     procedure RPenaltyDecClick(Sender: TObject);
     procedure BPenaltyDecClick(Sender: TObject);
-    procedure OpenCategoryClick(Sender: TObject);
-    procedure SaveResultsClick(Sender: TObject);
-    procedure PrintProrocolClick(Sender: TObject);
     procedure ConfirmClick(Sender: TObject);
     procedure PauseClick(Sender: TObject);
     procedure ClearClick(Sender: TObject);
+    procedure OpenCategoryClick(Sender: TObject);
+    procedure SaveResultsClick(Sender: TObject);
+    procedure PrintProtocolClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -335,25 +335,6 @@ type
     panel9.Caption:=IntToStr(bluepenalty);
   end;
 
-  procedure TForm5.OpenCategoryClick(Sender: TObject);
-  begin
-    RichEdit1.Visible:=true;
-    if OpenCategoryFile.Execute = true then
-    RichEdit1.Lines.LoadFromFile(OpenCategoryFile.FileName);
-  end;
-
-  procedure TForm5.SaveResultsClick(Sender: TObject);
-  begin
-    if SaveProtocol.Execute = true then
-    RichEdit1.Lines.SaveToFile(SaveProtocol.FileName);
-  end;
-
-  procedure TForm5.PrintProrocolClick(Sender: TObject);
-  begin
-    if PrintReadyProtocol.Execute = true then
-    RichEdit1.Print(Form5.Caption);
-  end;
-
   procedure TForm5.ConfirmClick(Sender: TObject);
   Var RTech,BTech,RConc,BConc,REx,BEx,RRhthm,BRhthm,RBal,BBal,RTotal,BTotal : integer;
   begin
@@ -413,5 +394,24 @@ begin
   RBalance.ItemIndex:=-1;  
   BBalance.ItemIndex:=-1;
   end;
+
+procedure TForm5.OpenCategoryClick(Sender: TObject);
+begin
+RichEdit1.Visible:=true;
+    if OpenCategoryFile.Execute = true then
+    RichEdit1.Lines.LoadFromFile(OpenCategoryFile.FileName);
+end;
+
+procedure TForm5.SaveResultsClick(Sender: TObject);
+begin
+if SaveProtocol.Execute = true then
+    RichEdit1.Lines.SaveToFile(SaveProtocol.FileName);
+end;
+
+procedure TForm5.PrintProtocolClick(Sender: TObject);
+begin
+    if PrintReadyProtocol.Execute = true then
+    RichEdit1.Print(Form5.Caption);
+end;
 
 end.
