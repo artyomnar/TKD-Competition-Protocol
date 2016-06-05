@@ -4,7 +4,8 @@ interface
 
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
-  Dialogs, ExtCtrls, StdCtrls, Grids, DBGrids, ComCtrls, Menus, Buttons;
+  Dialogs, ExtCtrls, StdCtrls, Grids, DBGrids, ComCtrls, Menus, Buttons,
+  jpeg;
 
 type
   TForm5 = class(TForm)
@@ -78,6 +79,7 @@ type
     OpenCategory: TBitBtn;
     SaveResults: TBitBtn;
     PrintProtocol: TBitBtn;
+    CompModeBackground: TImage;
     procedure N2Click(Sender: TObject);
     procedure N3Click(Sender: TObject);
     procedure N4Click(Sender: TObject);
@@ -395,23 +397,23 @@ begin
   BBalance.ItemIndex:=-1;
   end;
 
-procedure TForm5.OpenCategoryClick(Sender: TObject);
-begin
-RichEdit1.Visible:=true;
+  procedure TForm5.OpenCategoryClick(Sender: TObject);
+  begin
+    RichEdit1.Visible:=true;
     if OpenCategoryFile.Execute = true then
     RichEdit1.Lines.LoadFromFile(OpenCategoryFile.FileName);
-end;
+  end;
 
-procedure TForm5.SaveResultsClick(Sender: TObject);
-begin
-if SaveProtocol.Execute = true then
+  procedure TForm5.SaveResultsClick(Sender: TObject);
+  begin
+    if SaveProtocol.Execute = true then
     RichEdit1.Lines.SaveToFile(SaveProtocol.FileName);
-end;
+  end;
 
-procedure TForm5.PrintProtocolClick(Sender: TObject);
-begin
+  procedure TForm5.PrintProtocolClick(Sender: TObject);
+  begin
     if PrintReadyProtocol.Execute = true then
     RichEdit1.Print(Form5.Caption);
-end;
+  end;
 
 end.

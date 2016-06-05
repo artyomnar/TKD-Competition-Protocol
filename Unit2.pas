@@ -28,7 +28,7 @@ type
     DBNavigator2: TDBNavigator;
     DBNavigator3: TDBNavigator;
     DBNavigator4: TDBNavigator;
-    Image1: TImage;
+    RegImage: TImage;
     procedure N2Click(Sender: TObject);
     procedure N3Click(Sender: TObject);
     procedure N4Click(Sender: TObject);
@@ -48,25 +48,25 @@ uses Unit1, Unit6, Unit7, Unit8;
 
 {$R *.dfm}
 
-procedure TForm2.N2Click(Sender: TObject);
-begin
-form2.Visible := false;
-form1.Visible := true;
-end;
+  procedure TForm2.N2Click(Sender: TObject);
+  begin
+    form2.Visible := false;
+    form1.Visible := true;
+  end;
 
-procedure TForm2.N3Click(Sender: TObject);
-begin
-form6.visible:=true;
-end;
+  procedure TForm2.N3Click(Sender: TObject);
+  begin
+    form6.visible:=true;
+  end;
 
-procedure TForm2.N4Click(Sender: TObject);
-begin
-form7.visible:=true;
-end;
+  procedure TForm2.N4Click(Sender: TObject);
+  begin
+    form7.visible:=true;
+  end;
 
-procedure TForm2.N5Click(Sender: TObject);
-begin
-form8.visible:=true;
-end;
+  procedure TForm2.N5Click(Sender: TObject);
+  begin
+    form8.visible:=true;
+  end;
 
-end.
+  end.

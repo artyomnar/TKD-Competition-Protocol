@@ -57,6 +57,7 @@ type
     FindMassogyCategory: TBitBtn;
     FindPatternCategory: TBitBtn;
     OpenTemplate: TBitBtn;
+    SortBackground: TImage;
     procedure N2Click(Sender: TObject);
     procedure N3Click(Sender: TObject);
     procedure N4Click(Sender: TObject);
@@ -82,41 +83,41 @@ uses Unit1, Unit6, Unit7, Unit8, Unit9;
 
 {$R *.dfm}
 
-procedure TForm4.N2Click(Sender: TObject);
-begin
-form4.Visible := false;
-form1.Visible := true;
-end;
+  procedure TForm4.N2Click(Sender: TObject);
+  begin
+    form4.Visible := false;
+    form1.Visible := true;
+  end;
 
-procedure TForm4.N3Click(Sender: TObject);
-begin
-form6.visible:=true;
-end;
+  procedure TForm4.N3Click(Sender: TObject);
+  begin
+    form6.visible:=true;
+  end;
 
-procedure TForm4.N4Click(Sender: TObject);
-begin
-form7.visible:=true;
-end;
+  procedure TForm4.N4Click(Sender: TObject);
+  begin
+    form7.visible:=true;
+  end;
 
-procedure TForm4.N5Click(Sender: TObject);
-begin
-form8.visible:=true;
-end;
+  procedure TForm4.N5Click(Sender: TObject);
+  begin
+    form8.visible:=true;
+  end;
 
-procedure TForm4.SaveSortitionClick(Sender: TObject);
-begin
-if SaveDialog1.Execute = true then
-RichEdit1.Lines.SaveToFile(SaveDialog1.FileName);
-end;
+  procedure TForm4.SaveSortitionClick(Sender: TObject);
+  begin
+    if SaveDialog1.Execute = true then
+    RichEdit1.Lines.SaveToFile(SaveDialog1.FileName);
+  end;
 
-procedure TForm4.PrintSortitionClick(Sender: TObject);
-begin
-if PrintDialog1.Execute = true then
-RichEdit1.Print(Form4.Caption);
-end;
+  procedure TForm4.PrintSortitionClick(Sender: TObject);
+  begin
+    if PrintDialog1.Execute = true then
+    RichEdit1.Print(Form4.Caption);
+  end;
 
-procedure TForm4.FindMassogyCategoryClick(Sender: TObject);
- Var SGenre,SAgeUp,SAgeDown,Sweight:string;
+  procedure TForm4.FindMassogyCategoryClick(Sender: TObject);
+  Var SGenre,SAgeUp,SAgeDown,Sweight:string;
   begin
     SGenre:=Unit4.Form4.GenreList.text;
     SWeight:=Unit4.Form4.WeightList.text;
@@ -209,10 +210,10 @@ procedure TForm4.FindMassogyCategoryClick(Sender: TObject);
       end;
       end;
     end;
-end;
+  end;
 
-procedure TForm4.FindPatternCategoryClick(Sender: TObject);
-Var PGenre, PAgeDown, PAgeUp, Belt:String;
+  procedure TForm4.FindPatternCategoryClick(Sender: TObject);
+  Var PGenre, PAgeDown, PAgeUp, Belt:String;
   begin
     PGenre:=Unit4.Form4.GenreListPattern.text;
     PAgeDown:=Unit4.Form4.AgeListDownP.text;
@@ -429,13 +430,13 @@ Var PGenre, PAgeDown, PAgeUp, Belt:String;
       end;
     end;
   end;
-end;
+  end;
 
-procedure TForm4.OpenTemplateClick(Sender: TObject);
-begin
-RichEdit1.Visible:=true;
-if OpenDialog1.Execute = true then
-RichEdit1.Lines.LoadFromFile(OpenDialog1.FileName);
-end;
+  procedure TForm4.OpenTemplateClick(Sender: TObject);
+  begin
+    RichEdit1.Visible:=true;
+    if OpenDialog1.Execute = true then
+    RichEdit1.Lines.LoadFromFile(OpenDialog1.FileName);
+  end;
 
 end.
