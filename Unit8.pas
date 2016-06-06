@@ -4,18 +4,18 @@ interface
 
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
-  Dialogs, Menus, ExtCtrls, ComCtrls, StdCtrls;
+  Dialogs, Menus, ExtCtrls, ComCtrls, StdCtrls, jpeg;
 
 type
   TForm8 = class(TForm)
     StatusBar1: TStatusBar;
     MainMenu1: TMainMenu;
-    Panel1: TPanel;
     N1: TMenuItem;
     N2: TMenuItem;
     N3: TMenuItem;
     N4: TMenuItem;
     N5: TMenuItem;
+    BackgroundAuthor: TImage;
     Label1: TLabel;
     procedure N2Click(Sender: TObject);
     procedure N3Click(Sender: TObject);
