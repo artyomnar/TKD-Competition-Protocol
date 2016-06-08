@@ -10,7 +10,8 @@ uses
   Unit6 in 'Unit6.pas' {Form6},
   Unit7 in 'Unit7.pas' {Form7},
   Unit8 in 'Unit8.pas' {Form8},
-  Unit9 in 'Unit9.pas' {DataModule9: TDataModule};
+  Unit9 in 'Unit9.pas' {DataModule9: TDataModule},
+  Unit10 in 'Unit10.pas' {ScoreRules};
 
 {$R *.res}
 
@@ -25,5 +26,6 @@ begin
   Application.CreateForm(TForm7, Form7);
   Application.CreateForm(TForm8, Form8);
   Application.CreateForm(TDataModule9, DataModule9);
+  Application.CreateForm(TScoreRules, ScoreRules);
   Application.Run;
 end.

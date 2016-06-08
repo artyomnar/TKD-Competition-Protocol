@@ -28085,6 +28085,10 @@ object Form5: TForm5
       Caption = #1042' '#1052#1077#1085#1102
       OnClick = N2Click
     end
+    object N6: TMenuItem
+      Caption = #1055#1072#1084#1103#1090#1082#1072' '#1072#1088#1073#1080#1090#1088#1072
+      OnClick = N6Click
+    end
   end
   object OpenCategoryFile: TOpenDialog
     Filter = '.txt'

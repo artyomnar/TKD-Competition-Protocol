@@ -80,6 +80,7 @@ type
     SaveResults: TBitBtn;
     PrintProtocol: TBitBtn;
     CompModeBackground: TImage;
+    N6: TMenuItem;
     procedure N2Click(Sender: TObject);
     procedure N3Click(Sender: TObject);
     procedure N4Click(Sender: TObject);
@@ -105,6 +106,7 @@ type
     procedure OpenCategoryClick(Sender: TObject);
     procedure SaveResultsClick(Sender: TObject);
     procedure PrintProtocolClick(Sender: TObject);
+    procedure N6Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -119,7 +121,7 @@ type
     redpenalty, bluepenalty:integer;
 
   implementation
-  uses Unit1, Unit6, Unit7, Unit8;
+  uses Unit1, Unit6, Unit7, Unit8, Unit10;
   {$R *.dfm}
 
   procedure TForm5.N2Click(Sender: TObject);
@@ -415,5 +417,10 @@ begin
     if PrintReadyProtocol.Execute = true then
     RichEdit1.Print(Form5.Caption);
   end;
+
+procedure TForm5.N6Click(Sender: TObject);
+begin
+ScoreRules.visible:=true;
+end;
 
 end.
